@@ -27,7 +27,7 @@ sign_up_submit_button.onclick = () =>{
         })
         .then(data =>{
             localStorage.setItem("token", data.token);
-            loadLogInPage(data)
+            loadHomePage(data)
         }).catch(err =>console.log(err));
 
     }catch(error){
@@ -38,9 +38,9 @@ sign_up_submit_button.onclick = () =>{
 }
 // 
 
-function loadLogInPage(data){
+function loadHomePage(data){
     console.log(data)
-    window.location.replace('http://127.0.0.1:5500/client/resources/views/html/home.html') 
+    window.location.replace('home.html') 
 }
 
 

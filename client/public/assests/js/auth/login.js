@@ -42,12 +42,12 @@ login_submit_btn.onclick = (event) =>{
 
 function loadHomePage(data){
     console.log(data)
-    window.location.replace('http://127.0.0.1:5500/client/resources/views/html/home.html') 
+    window.location.replace('home.html') 
 }
 
 
 document.getElementById("signupbtn").onclick = () => {
-    window.location.replace('http://127.0.0.1:5500/client/resources/views/html/signup.html')
+    window.location.replace('signup.html')
 }
 
 

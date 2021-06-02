@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded',auth())
 
 document.addEventListener("DOMContentLoaded",function(){
     fetch("http://localhost:8080/quiz/mass_quizess",{

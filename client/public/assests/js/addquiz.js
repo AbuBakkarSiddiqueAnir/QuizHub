@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded',auth())
+
 const add_quiz_submit = document.querySelector("#add-quiz-submit")
 add_quiz_submit.onclick = (event) =>{
     const question = document.querySelector("#question");
