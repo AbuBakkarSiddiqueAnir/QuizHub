@@ -4,7 +4,6 @@ const userModel = require('../models/user_model');
 const {ownerQuiz,withoutOwnerQuiz} = require('../models/quiz_model');
 const auth = require('../middleware/middleware');
 
-
 router.post("/user", async (req, res) => {
     const user = new userModel(req.body);
     console.log(req.body)
@@ -45,11 +44,9 @@ router.post("/user/logout", auth, async (req, res) => {
 })
 
 
-
 router.get('/user/profile', auth,async (req, res) => {
     res.status(200).send(req.user)
 })
-
 
 
 router.patch("/user/profile", auth, async (req, res) =>{

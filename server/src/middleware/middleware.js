@@ -4,7 +4,6 @@ const userModel = require('../models/user_model');
 const auth = async (req, res, next) => {
   
     try{
-        console.log(req.header("Authorization"))
         const token = req.header("Authorization").replace("Bearer ","");
         
         const decodedToken = jwt.verify(token, "This_is_a_quiz_app!");
