@@ -1,0 +1,458 @@
+[
+    {
+        "question": "The instrument that measures and records the relative humidity of air is_",
+        "options":[
+            {
+                "option": "Hydrometer"
+            },
+            {
+                "option": "Hygrometer"
+            },
+            {               
+                "option": "Lactometer"
+            },                  
+            {
+                "option": "Barometer"
+            }
+        ],
+        "answer":"Hygrometer",
+        "tag" : "physics"
+    },
+    {
+        "question": "The shape of our milky way galaxy is_",
+        "options":[
+            {
+                "option": "Circular"
+            },
+            {
+                "option": "Elliptical"
+            },
+            {
+                "option": "Spiral"
+            },
+            {
+                "option": "Nose of the above"
+            }
+        ],
+        "answer":"Spiral",
+        "tag" : "physics"
+    },
+    {
+        "question": "The different colors of different stars are due to the variation of_",
+        "options":[
+            {
+                "option": "Temperature"
+            },
+            {
+                "option": "Pressure"
+            },
+            {
+                "option": "Density"
+            },
+            {
+                "option": "Radiation from tehm"
+            }
+        ],
+        "answer":"Temperature",
+        "tag" : "physics"
+    },
+    {
+        "question": "The fundamental scientific principle in the operation of battery is_",
+        "options":[
+            {
+                "option": "Acid-base interaction"
+            },
+            {
+                "option": "Dialysis"
+            },
+            {
+                "option": "Dissociation of electrolytes"
+            },
+            {
+                "option": "Oxidation-reduction"
+            }
+        ],
+        "answer":"Dissociation of electrolytes",
+        "tag" : "physics"
+    },
+    {
+        "question": "Instrument used to measure the force and velocity of the wind is_",
+        "options":[
+            {
+                "option": "Ammeter"
+            },
+            {
+                "option": "Anemometer"
+            },
+            {
+                "option": "Altimeter"
+            },
+            {
+                "option": "Audiometer"
+            }
+        ],
+        "answer":"Anemometer",
+        "tag" : "physics"
+    },
+    {
+        "question": "Which combination of color the most convenient during day and night time ?",
+        "options":[
+            {
+                "option": "Orange and blue"
+            },
+            {
+                "option": "White and black"
+            },
+            {
+                "option": "Yellow and blue"
+            },
+            {
+                "option": "Red and green"
+            }
+        ],
+        "answer":"Red and green",
+        "tag" : "physics"
+    },
+    {
+        "question": "Woolen clothes keep the body warm because_",
+        "options":[
+            {
+                "option": "Wool increses the temperature of the body"
+            },
+            {
+                "option": "Wool is a bad conductor"
+            },
+            {
+                "option": "Wool absorbs radiant heat from outer objects"
+            },
+            {
+                "option": "Wool rejects heat from the outer objects"
+            }
+        ],
+        "answer":"Wool is a bad conductor",
+        "tag" : "physics"
+    },
+    {
+        "question": "If the length of a simple pendulum is halved then its period of oscillation is_",
+        "options":[
+            {
+                "option": "doubled"
+            },
+            {
+                "option": "halved"
+            },
+            {
+                "option": "increased by a factor"
+            },
+            {
+                "option": "decreased by a factor"
+            }
+        ],
+        "answer":"decreased by a factor",
+        "tag" : "physics"
+    },
+    {
+        "question": "Equilibrium is a condition that can_",
+        "options":[
+            {
+                "option": "never change"
+            },
+            {
+                "option": "change only if some outside factor changes"
+            },
+            {
+                "option": "change only if some internal factor changes"
+            },
+            {
+                "option": "change only if government policies change"
+            }
+        ],
+        "answer":"never change",
+        "tag" : "physics"
+    },
+    {
+        "question": "While catching a ball, a player pulls down his hands to lower the ",
+        "options":[
+            {
+                "option": "force"
+            },
+            {
+                "option": "moment"
+            },
+            {
+                "option": "impulse"
+            },
+            {
+                "option": "catching time"
+            }
+        ],
+        "answer":"impulse",
+        "tag" : "physics"
+    },
+    {
+        "question": "Geostationary satellite revolves at",
+        "options":[
+            {
+                "option": "any height"
+            },
+            {
+                "option": "fixed height"
+            },
+            {
+                "option": "height which depends upon its mass"
+            },
+            {
+                "option": "height above pole"
+            }
+        ],
+        "answer":"fixed height",
+        "tag" : "physics"
+    },
+    {
+        "question": "When a barometer reading suddenly recedes, it indicates that climate_",
+        "options":[
+            {
+                "option": "will be very warm"
+            },
+            {
+                "option": "will be extremely stormy"
+            },
+            {
+                "option": "will remain cold"
+            },
+            {
+                "option": "incessant rain for at least 48 hours"
+            }
+        ],
+        "answer":"will be extremely stormy",
+        "tag" : "physics"
+    },
+    {
+        "question": "A particle dropped from the top of a tower uniformly falls on ground at a distance which is equal to the height of tower. Which of the following paths will be traversed by the particly ?",
+        "options":[
+            {
+                "option": "Circle"
+            },
+            {
+                "option": "Parabolic"
+            },
+            {
+                "option": "Great circle"
+            },
+            {
+                "option": "Hyper-parabolic"
+            }
+        ],
+        "answer":"Parabolic",
+        "tag" : "physics"
+    },
+    {
+        "question": "Asteroids revolve round the Sun between which of the following two planets ?",
+        "options":[
+            {
+                "option": "Earth and Mars"
+            },
+            {
+                "option": "Mars and Jupiter"
+            },
+            {
+                "option": "Jupiter Saturn"
+            },
+            {
+                "option": " Saturn and Uranus"
+            }
+        ],
+        "answer":"Mars and Jupiter",
+        "tag" : "physics"
+    },
+    {
+        "question": "Smog is a general pollutant where_",
+        "options":[
+            {
+                "option": "temperature is high"
+            },
+            {
+                "option": "temperture is low"
+            },
+            {
+                "option": "air contains excess ammonia"
+            },
+            {
+                "option": "air contains excess SO2"
+            }
+        ],
+        "answer":"air contains excess SO2",
+        "tag" : "physics"
+    },
+    {
+        "question": "The speed of light with the rise in the temperature of teh medium",
+        "options":[
+            {
+                "option": "Increases"
+            },
+            {
+                "option": "Decreases"
+            },
+            {
+                "option": "Remains unaltered"
+            },
+            {
+                "option": "Drops suddenly"
+            }
+        ],
+        "answer":"Remains unaltered",
+        "tag" : "physics"
+    },
+    {
+        "question": "Cloths keep us warm in winter because they_",
+        "options":[
+            {
+                "option": "suppy heat"
+            },
+            {
+                "option": "don't radiate heat"
+            },
+            {
+                "option": "prevent air from contacting the body"
+            },
+            {
+                "option": "prevent the heat of the body from excaping"
+            }
+        ],
+        "answer":"prevent the heat of the body from excaping",
+        "tag" : "physics"
+    },
+    {
+        "question": "In a refrigerator what produces the cooling",
+        "options":[
+            {
+                "option": "the ice deposits on the freezer"
+            },
+            {
+                "option": "The sudden expansion of a comporessed gas"
+            },
+            {
+                "option": "The evaporation of a volatile liquid"
+            },
+            {
+                "option": "None of these above"
+            }
+        ],
+        "answer":"The evaporation of a volatile liquid",
+        "tag" : "physics"
+    },
+    {
+        "question": "Why are we able to hear short wave broadcasts etter than long wave broadcasts ?",
+        "options":[
+            {
+                "option": "Short waves are more energetic than long waves."
+            },
+            {
+                "option": "Short waves are unaffected by atmospheric disturbances."
+            },
+            {
+                "option": "Short wave broadcasts are made by nearby radio stations."
+            },
+            {
+                "option": "By convention, short waves are meant for long distances, whereas long waves are reserved for short distances"
+            }
+        ],
+        "answer":"Short waves are unaffected by atmospheric disturbances.",
+        "tag" : "physics"
+    },
+    {
+        "question": "Electron microscope was invented by_",
+        "options":[
+            {
+                "option": "Knoll and Ruska"
+            },
+            {
+                "option": "Robert Koch"
+            },
+            {
+                "option": "Leeuwenhock"
+            },
+            {
+                "option": "CP. Swan son"
+            }
+        ],
+        "answer":"Knoll and Ruska",
+        "tag" : "physics"
+    },
+    {
+        "question": "A passenger standing in a bus is thrown outward when the bu takes a sudden turn. This happens due to_",
+        "options":[
+            {
+                "option": "Outward pull on him"
+            },
+            {
+                "option": "Inertia of motion"
+            },
+            {
+                "option": "Change in momentum"
+            },
+            {
+                "option": "change in acceleration"
+            }
+        ],
+        "answer":"Inertia of motion",
+        "tag" : "physics"
+    },
+    {
+        "question": "Which of the following is not true for Geostationary Satellite ?",
+        "options":[
+            {
+                "option": "Its time period is 24 hours"
+            },
+            {
+                "option": "Its angular speed is equal to that of earth about its own axis"
+            },
+            {
+                "option": "It is fixed in space"
+            },
+            {
+                "option": "It revolves from west to east ove the equator"
+            }
+        ],
+        "answer":"It is fixed in space",
+        "tag" : "physics"
+    },
+    {
+        "question": "When pressure is increased the melting point of ice_",
+        "options":[
+            {
+                "option": "increases"
+            },
+            {
+                "option": "does not change"
+            },
+            {
+                "option": "decreases"
+            },
+            {
+                "option": "depends on the impurities in the ice"
+            }
+        ],
+        "answer":"decreases",
+        "tag" : "physics"
+    },
+    {
+        "question": "Longitudinal waves can't travel through_",
+        "options":[
+            {
+                "option": "Vacuum"
+            },
+            {
+                "option": "Solid"
+            },
+            {
+                "option": "Liquid"
+            },
+            {
+                "option": "Gas"
+            }
+        ],
+        "answer":"Vacuum",
+        "tag" : "physics"
+    }
+]

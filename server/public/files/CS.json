@@ -1,0 +1,290 @@
+[
+    {
+        "question": "What is the main folder on a storage device ?",
+        "options":[
+            {
+                "option": "Platform"
+            },
+            {
+                "option": "Interface"
+            },
+            {               
+                "option": "Root Directory"
+            },                  
+            {
+                "option": "Home page"
+            }
+        ],
+        "answer":"Root Directory",
+        "tag" : "cs"
+    },
+    {
+        "question": "Ram is ___ and ___.",
+        "options":[
+            {
+                "option": "volatile, temporary"
+            },
+            {
+                "option": "nonvolatile, permanent"
+            },
+            {               
+                "option": "nonvolatile, temporary"
+            },                  
+            {
+                "option": "volatile, permanent"
+            }
+        ],
+        "answer":"volatile, temporary",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which is not an item of a hardware ?",
+        "options":[
+            {
+                "option": "An mp3 file"
+            },
+            {
+                "option": "A keyboard"
+            },
+            {               
+                "option": "A monitor"
+            },                  
+            {
+                "option": "A mouse"
+            }
+        ],
+        "answer":"An mp3 file",
+        "tag" : "cs"
+    },
+    {
+        "question": "A box that contains the central electronic compnents of the computer is the __",
+        "options":[
+            {
+                "option": "motherboard"
+            },
+            {
+                "option": "system unit"
+            },
+            {               
+                "option": "peripheral"
+            },                  
+            {
+                "option": "input device"
+            }
+        ],
+        "answer":"motherboard",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which type of device is computer monitor ?",
+        "options":[
+            {
+                "option": "Input"
+            },
+            {
+                "option": "Output"
+            },
+            {               
+                "option": "Processing"
+            },                  
+            {
+                "option": "Software"
+            }
+        ],
+        "answer":"Output",
+        "tag" : "cs"
+    },
+    {
+        "question": "How many options does a binary choice offer",
+        "options":[
+            {
+                "option": "one"
+            },
+            {
+                "option": "two"
+            },
+            {               
+                "option": "three"
+            },                  
+            {
+                "option": "It depends on the amount available memory space available"
+            }
+        ],
+        "answer":"two",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which menu is selected to cut, copy, and paste ?",
+        "options":[
+            {
+                "option": "File"
+            },
+            {
+                "option": "Edit"
+            },
+            {               
+                "option": "Tools"
+            },                  
+            {
+                "option": "Table"
+            }
+        ],
+        "answer":"Edit",
+        "tag" : "cs"
+    },
+    {
+        "question": "Storage device, inside the computer is_",
+        "options":[
+            {
+                "option": "CDROM"
+            },
+            {
+                "option": "Zip Disk"
+            },
+            {               
+                "option": "Super Disk"
+            },                  
+            {
+                "option": "Hard Disk"
+            }
+        ],
+        "answer":"Hard Disk",
+        "tag" : "cs"
+    },
+    {
+        "question": "The ___ indicates how much data a particular storage medium can hold .",
+        "options":[
+            {
+                "option": "access"
+            },
+            {
+                "option": "capacity"
+            },
+            {               
+                "option": "memory"
+            },                  
+            {
+                "option": "storage"
+            }
+        ],
+        "answer":"capacity",
+        "tag" : "cs"
+    },
+    {
+        "question": "If you are going to a site you use often, instead of having to type in the address every time, you should ___",
+        "options":[
+            {
+                "option": "save it as a file"
+            },
+            {
+                "option": "make a copy of it"
+            },
+            {               
+                "option": "bookmark it"
+            },                  
+            {
+                "option": "delete it"
+            }
+        ],
+        "answer":"bookmark it",
+        "tag" : "cs"
+    },
+    {
+        "question": "The quickest and easiest way in Word, to locate a particular word or phrase in document is to use the ____ command.",
+        "options":[
+            {
+                "option": "Replace"
+            },
+            {
+                "option": "Find"
+            },
+            {               
+                "option": "Lookup"
+            },                  
+            {
+                "option": "Search"
+            }
+        ],
+        "answer":"Search",
+        "tag" : "cs"
+    },
+    {
+        "question": "Oneor more defects or problems that prevent the software from working as intended or working at all is_",
+        "options":[
+            {
+                "option": "bug"
+            },
+            {
+                "option": "bot"
+            },
+            {               
+                "option": "programming language"
+            },                  
+            {
+                "option": "fuzzy logic"
+            }
+        ],
+        "answer":"bug",
+        "tag" : "cs"
+    },
+    {
+        "question": "_______ is the part of the computer that does the arithmetical calculation.",
+        "options":[
+            {
+                "option": "Memory"
+            },
+            {
+                "option": "OS"
+            },
+            {               
+                "option": "CPU"
+            },                  
+            {
+                "option": "ALU"
+            }
+        ],
+        "answer":"ALU",
+        "tag" : "cs"
+    },
+    {
+        "question": "A _____ can make it easier to play games",
+        "options":[
+            {
+                "option": "mouse"
+            },
+            {
+                "option": "joystick"
+            },
+            {               
+                "option": "keyboard"
+            },                  
+            {
+                "option": "pen"
+            }
+        ],
+        "answer":"joystick",
+        "tag" : "cs"
+    },
+    {
+        "question": "File extensions are used in order to ______",
+        "options":[
+            {
+                "option": "name the file"
+            },
+            {
+                "option": "ensure the filename is not lost"
+            },
+            {               
+                "option": "identify the file"
+            },                  
+            {
+                "option": "identify the file type"
+            }
+        ],
+        "answer":"identify the file type",
+        "tag" : "cs"
+    }
+]
+
+
+

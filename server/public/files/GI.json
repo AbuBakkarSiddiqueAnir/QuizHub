@@ -1,0 +1,350 @@
+[
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Work : Leisure"
+            },
+            {
+                "option": "Day : night"
+            },
+            {               
+                "option": "Expedite : Procrastinate"
+            },                  
+            {
+                "option": "frequently : Always"
+            }, 
+            {
+                "option" : "Happy : Unhappy"    
+            }
+        ],
+        "answer":"none",
+        "tag" : "gi"
+    },
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "March"
+            },
+            {
+                "option": "January"
+            },
+            {               
+                "option": "August"
+            },                  
+            {
+                "option": "june"
+            },
+            {
+                "option" : "May"
+            }
+        ],
+        "answer":"june",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "BY"
+            },
+            {
+                "option": "LO"
+            },
+            {               
+                "option": "EW"
+            },                  
+            {
+                "option": "GT"
+            },
+            {
+                "option":"SH"
+            }
+        ],
+        "answer":"EW",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "25-5"
+            },
+            {
+                "option": "16-4"
+            },
+            {               
+                "option": "144-12"
+            },                  
+            {
+                "option": "64-7"
+            },
+            {
+                "option":"36-6"
+            }
+        ],
+        "answer":"64-7",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "28"
+            },
+            {
+                "option": "42"
+            },
+            {               
+                "option": "21"
+            },                  
+            {
+                "option": "65"
+            },
+            {
+                "option":"35"
+            }
+        ],
+        "answer":"65",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "25-E"
+            },
+            {
+                "option": "16-D"
+            },
+            {               
+                "option": "144-L"
+            },                  
+            {
+                "option": "64-G"
+            },
+            {
+                "option":"36-F"
+            }
+        ],
+        "answer":"64-G",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Driver, passener, vehicle"
+            },
+            {
+                "option": "Chair, table, bench"
+            },
+            {               
+                "option": "Ship, Boat, Pilot"
+            },                  
+            {
+                "option": "Apple, Orange, Winter"
+            },
+            {
+                "option":"Mango, flower, orchard"
+            }
+        ],
+        "answer":"Chair, table, benchh",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Door"
+            },
+            {
+                "option": "Gate"
+            },
+            {               
+                "option": "Table"
+            },                  
+            {
+                "option": "Window"
+            }
+        ],
+        "answer":"Table",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "CIRE"
+            },
+            {
+                "option": "NAIR"
+            },
+            {               
+                "option": "LOUDSC"
+            },                  
+            {
+                "option": "RNUTHDE"
+            }
+        ],
+        "answer":"CIRE",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "NMLK"
+            },
+            {
+                "option": "RQPO"
+            },
+            {               
+                "option": "UTSR"
+            },                  
+            {
+                "option": "WXUV"
+            }
+        ],
+        "answer":"WXUV",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "WRONG"
+            },
+            {
+                "option": "GREEN"
+            },
+            {               
+                "option": "WHITE"
+            },                  
+            {
+                "option": "RIGHT"
+            }
+        ],
+        "answer":"GREEN",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Bird"
+            },
+            {
+                "option": "Insect"
+            },
+            {               
+                "option": "Aeroplane"
+            },                  
+            {
+                "option": "Kite"
+            }
+        ],
+        "answer":"Insect",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Salt"
+            },
+            {
+                "option": "Black pepper"
+            },
+            {               
+                "option": "Chilli"
+            },                  
+            {
+                "option": "Coriander"
+            },
+            {
+                "option": "Jira"
+            }
+        ],
+        "answer":"Salt",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Table"
+            },
+            {
+                "option": "Chair"
+            },
+            {               
+                "option": "Cupboard"
+            },                  
+            {
+                "option": "Bed"
+            },
+            {
+                "option": "Computer"
+            }
+        ],
+        "answer":"Computer",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Apple"
+            },
+            {
+                "option": "Papaya"
+            },
+            {               
+                "option": "Litchi"
+            },                  
+            {
+                "option": "Guava"
+            }
+        ],
+        "answer":"Litchi",
+        "tag" : "gi"
+    }
+    ,
+    {
+        "question": "Select the odd one_",
+        "options":[
+            {
+                "option": "Kitten"
+            },
+            {
+                "option": "Goat"
+            },
+            {               
+                "option": "Calf"
+            },                  
+            {
+                "option": "Foal"
+            },
+            {
+                "option": "Lamb"
+            }
+        ],
+        "answer":"Goat",
+        "tag" : "gi"
+    }
+]
