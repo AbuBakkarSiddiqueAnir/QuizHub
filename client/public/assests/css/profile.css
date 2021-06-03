@@ -132,8 +132,18 @@ nav ul {
 .my-quizess-btn-area {
   display: flex;
   flex-direction: row;
+  gap : 23px;
   
 }
+
+.my-quizess-btn-area div{
+  background: #09bf7c;
+  padding:5px;
+  width:130px;
+  text-align:center;
+  cursor: pointer;
+}
+
 
 .quiz-container-btn-area div {
   width : 120px;
@@ -144,14 +154,29 @@ nav ul {
 
 
 .my-quizess-btn-area div:hover {
-  background:#2ebd11
+  background:#067c51;
 }
+
+.my-quizess-container {
+  width :90%;
+  height: auto;
+  margin-bottom:30px;
+}
+
 
 .my-quizess-area {
   width: 70%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-radius: 0px;
+  background: #ffffff;
+  box-shadow:  5px 5px 12px #d9d9d9,
+              -5px -5px 12px #ffffff;
+  margin-top:30px;
+  
+  margin-left:15%;
+  padding:14px;
 }
 
 .options-area {

@@ -8,7 +8,7 @@ function auth() {
         })
         .then(response => response.json())
         .then(data => {
-            if(data.status !== 200) throw new Error("not logged in")
+            if(data.status == 200) return
         })
         .catch(error =>  window.location.replace('login.html'))
 

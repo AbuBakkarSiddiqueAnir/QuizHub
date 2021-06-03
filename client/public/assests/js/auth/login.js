@@ -2,6 +2,7 @@
 const login_submit_btn = document.querySelector("#login_submit_btn")
 
 login_submit_btn.onclick = (event) =>{
+    event.preventDefault()
     const login_username = document.querySelector("#login_username");
     const login_password = document.querySelector("#login_password");
 
@@ -13,8 +14,8 @@ login_submit_btn.onclick = (event) =>{
                 "Content-type":"application/json"
             },
             body : JSON.stringify({
-                 username : login_username.value,
-                 password : login_password.value
+                 username : login_username.value.trim(),
+                 password : login_password.value.trim()
             })
         })
         .then(data =>{

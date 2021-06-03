@@ -82,26 +82,26 @@ const activeTagBtn = (btn) => {
 
 
 
-function loadHTMLTable(data){
+// function loadHTMLTable(data){
     
-    const table = document.querySelector("#table-area");
-    table.innerHTML = ""
-    let tableData = ``
+//     const table = document.querySelector("#table-area");
+//     table.innerHTML = ""
+//     let tableData = ``
 
-    for(let quiz of data.mass_quizess){
-        var tableHTML = `<div class="quiz-container-content-area">
-        <h3>${quiz.question}</h3><div class="options-area">`
-        let option1 = ``;
-        for(let option of quiz.options){
-            option1 += `<label class="option" for="male">${option.option}</label><br>`
-        }
-        tableHTML += option1;
-        tableHTML += ` </div>
-        </div>`
+//     for(let quiz of data.mass_quizess){
+//         var tableHTML = `<div class="quiz-container-content-area">
+//         <h3>${quiz.question}</h3><div class="options-area">`
+//         let option1 = ``;
+//         for(let option of quiz.options){
+//             option1 += `<label class="option" for="male">${option.option}</label><br>`
+//         }
+//         tableHTML += option1;
+//         tableHTML += ` </div>
+//         </div>`
 
-        tableData += tableHTML
+//         tableData += tableHTML
        
-    }
-    table.innerHTML += tableData
-}
+//     }
+//     table.innerHTML += tableData
+// }
 

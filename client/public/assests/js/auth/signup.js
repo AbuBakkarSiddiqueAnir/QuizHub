@@ -14,9 +14,9 @@ sign_up_submit_button.onclick = () =>{
                 "Content-type":"application/json"
             },
             body : JSON.stringify({
-                 username : sign_up_user_name.value,
-                 email : sign_up_email.value,
-                 password : sign_up_password.value
+                 username : sign_up_user_name.value.trim(),
+                 email : sign_up_email.value.trim(),
+                 password : sign_up_password.value.trim()
             })
         })
         .then(data =>{
@@ -28,11 +28,10 @@ sign_up_submit_button.onclick = () =>{
         .then(data =>{
             localStorage.setItem("token", data.token);
             loadHomePage(data)
-        }).catch(err =>console.log(err));
+        }).catch(err => console.log(err) );
 
     }catch(error){
         console.log(error + "anir")
-
     }
 
 }

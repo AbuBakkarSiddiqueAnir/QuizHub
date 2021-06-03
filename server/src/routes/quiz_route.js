@@ -6,11 +6,11 @@ const auth = require('../middleware/middleware')
 //creating quizess
 
 router.post("/quiz/profile", auth, async (req, res)=>{
-    // const quiz = new ownerQuiz({
-    //     ...req.body,
-    //     owner : req.user._id
-    // });
-    const quiz = new ownerQuiz(req.body);
+    const quiz = new ownerQuiz({
+        ...req.body,
+        owner : req.user._id
+    });
+
     try{
         const returnedQuiz = await quiz.save();
         res.status(201).send(returnedQuiz)
@@ -37,7 +37,7 @@ router.get('/quiz/profile/', auth, async (req, res) => {
         }).execPopulate()
       
 
-        res.status(200).send({quizess : quizess.quiz})
+        res.status(200).send({mass_quizess : quizess.quiz})
     }catch(err){
         res.status(400).send({err})
     }

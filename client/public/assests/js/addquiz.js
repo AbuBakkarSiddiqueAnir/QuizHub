@@ -16,7 +16,8 @@ add_quiz_submit.onclick = (event) =>{
         fetch("http://localhost:8080/quiz/profile",{
             method: "POST",
             headers:{
-                "Content-type":"application/json"
+                "Content-type":"application/json",
+                Authorization: "Bearer " + localStorage.getItem("token")
             },
             body : JSON.stringify({
                  question : question.value,
@@ -51,7 +52,7 @@ add_quiz_submit.onclick = (event) =>{
             addquizunsuccess(err)
         } );
     }else{
-        console.log("fill the login form")
+        console.log("FILL THE FORM")
     }   
 }
 
