@@ -19,6 +19,23 @@ router.post("/quiz/profile", auth, async (req, res)=>{
     }
 })
 
+//querying single quiz
+
+router.get('/quiz/profile/:id', auth, async (req, res) => {
+    try{
+        
+        const quiz = await ownerQuiz.findOne({_id : req.params.id, owner: req.user._id});
+        if(!quiz) res.status(404).send("couldn't find the quiz you want to update")
+
+        else{
+            res.status(200).send(quiz)
+        }
+
+    }catch(err){
+        res.status(500).send(err)
+    }
+})
+
 
 //quering quizess
 
@@ -47,7 +64,7 @@ router.get('/quiz/profile/', auth, async (req, res) => {
 
 //update quiz
 
-router.patch('/quiz/profile/', auth, async (req, res) => {
+router.patch('/quiz/profile/:id', auth, async (req, res) => {
 
     const updates = Object.keys(req.body);
     const allowedUpdates = ["question","options","answer","tag"];
@@ -57,7 +74,7 @@ router.patch('/quiz/profile/', auth, async (req, res) => {
 
     try{
 
-        const quiz = await ownerQuiz.findOne({_id : req.query.id, owner : req.user._id});
+        const quiz = await ownerQuiz.findOne({_id : req.params.id, owner : req.user._id});
         updates.forEach((update)=> quiz[update] = req.body[update])
         await quiz.save()
         res.status(200).send(quiz)
