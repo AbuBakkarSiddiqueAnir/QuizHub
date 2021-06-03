@@ -52,7 +52,7 @@ add_quiz_submit.onclick = (event) =>{
             addquizunsuccess(err)
         } );
     }else{
-        console.log("FILL THE FORM")
+        alert("Fill out the whole form before submitting")
     }   
 }
 

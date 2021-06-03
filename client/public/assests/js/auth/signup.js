@@ -28,7 +28,7 @@ sign_up_submit_button.onclick = () =>{
         .then(data =>{
             localStorage.setItem("token", data.token);
             loadHomePage(data)
-        }).catch(err => console.log(err) );
+        }).catch(err => console.log(err)  );
 
     }catch(error){
         console.log(error + "anir")

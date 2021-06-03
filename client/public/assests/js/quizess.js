@@ -1,7 +1,7 @@
 
-document.addEventListener('DOMContentLoaded',auth())
+document.addEventListener('DOMContentLoaded', auth())
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", function(){
     fetch("http://localhost:8080/quiz/mass_quizess/physics",{
         method: "GET",
         headers: {
@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded",function(){
 })
 
 
+
+
 document.onclick = (event) => {
 
     const request = () => {
@@ -30,7 +32,7 @@ document.onclick = (event) => {
         .then(response =>response.json())
         .then(data =>{
             console.log(data)
-        return loadHTMLTable(data)
+        return loadHTMLTable(data,"quizess")
         }).catch(error =>console.log(error))
    }
 
@@ -48,7 +50,11 @@ document.onclick = (event) => {
       tag = "physics";
       activeTagBtn(event.target)
       request();
-   }
+   }else if(event.target.id === "other" || event.target.id === "h3o"){
+      tag = "other";
+      activeTagBtn(event.target)
+      request();
+ }
 }
 
 
@@ -61,12 +67,14 @@ function loadingAnimation() {
 const activeTagBtn = (btn) => {
     const physicsBtn = document.querySelector("#physics");
     const csBtn = document.querySelector("#cs");
-    const gi = document.querySelector("#gi")
+    const gi = document.querySelector("#gi");
+    const other = document.querySelector("#other");
 
-    if(btn.id === "h3p" || btn.id === "h3c" || btn.id === "h3g"){
+    if(btn.id === "h3p" || btn.id === "h3c" || btn.id === "h3g" || btn.id === "h3o"){
         physicsBtn.style.backgroundColor = "#0deb99"
         csBtn.style.backgroundColor = "#0deb99"
         gi.style.backgroundColor = "#0deb99";
+        other.style.backgroundColor = "#0deb99"
 
         btn.parentNode.style.backgroundColor = "#0a8256"
 
@@ -74,34 +82,10 @@ const activeTagBtn = (btn) => {
         physicsBtn.style.backgroundColor = "#0deb99"
         csBtn.style.backgroundColor = "#0deb99"
         gi.style.backgroundColor = "#0deb99"
+        other.style.backgroundColor = "#0deb99"
 
         btn.style.backgroundColor = "#0a8256"
     }
 
 }
-
-
-
-// function loadHTMLTable(data){
-    
-//     const table = document.querySelector("#table-area");
-//     table.innerHTML = ""
-//     let tableData = ``
-
-//     for(let quiz of data.mass_quizess){
-//         var tableHTML = `<div class="quiz-container-content-area">
-//         <h3>${quiz.question}</h3><div class="options-area">`
-//         let option1 = ``;
-//         for(let option of quiz.options){
-//             option1 += `<label class="option" for="male">${option.option}</label><br>`
-//         }
-//         tableHTML += option1;
-//         tableHTML += ` </div>
-//         </div>`
-
-//         tableData += tableHTML
-       
-//     }
-//     table.innerHTML += tableData
-// }
 

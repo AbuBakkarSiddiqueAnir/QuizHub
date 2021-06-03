@@ -146,7 +146,7 @@ router.get('/quiz/mass_quizess', auth, async (req, res) => {
 router.get('/quiz/mass_quizess/physics', auth, async (req, res) => {
     try{
 
-        const mass_quizess = await ownerQuiz.find({tag : "physics"})
+        const mass_quizess = await ownerQuiz.find({"tag" : "physics"})
         res.status(200).send({mass_quizess})
     }catch(err){
         res.status(500).send({
@@ -159,7 +159,7 @@ router.get('/quiz/mass_quizess/physics', auth, async (req, res) => {
 
 router.get('/quiz/mass_quizess/cs', auth, async (req, res) => {
     try{
-        const mass_quizess = await ownerQuiz.find({ tag : "cs" })
+        const mass_quizess = await ownerQuiz.find({ "tag" : "cs" })
         res.status(200).send({mass_quizess})
     }catch(err){
         res.status(500).send({
@@ -173,7 +173,20 @@ router.get('/quiz/mass_quizess/cs', auth, async (req, res) => {
 router.get('/quiz/mass_quizess/gi', auth, async (req, res) => {
     try{
  
-        const mass_quizess = await ownerQuiz.find({tag : "gi"})
+        const mass_quizess = await ownerQuiz.find({"tag" : "gi"})
+        res.status(200).send({mass_quizess})
+    }catch(err){
+        res.status(500).send({
+            operation  : "couldn't fetch mass_quizess"
+        })
+    }
+})
+
+
+router.get('/quiz/mass_quizess/other', auth, async (req, res) => {
+    try{
+ 
+        const mass_quizess = await ownerQuiz.find({"tag" : {"$nin" : ["cs", "physics", "gi"]}})
         res.status(200).send({mass_quizess})
     }catch(err){
         res.status(500).send({

@@ -12,9 +12,9 @@ function myQuizessLoaded() {
                     "Bearer " + localStorage.getItem("token")
             }
         })
-        .then(response =>response.json())
+        .then(response => response.json())
         .then(data =>{
-            loadHTMLTable(data)
+            loadHTMLTable(data, "profile")
         }).catch(error =>console.log(error))
     }catch(error) {
 

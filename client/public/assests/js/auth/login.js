@@ -1,4 +1,7 @@
 
+document.addEventListener('DOMContentLoaded', authOnLogin())
+
+
 const login_submit_btn = document.querySelector("#login_submit_btn")
 
 login_submit_btn.onclick = (event) =>{
