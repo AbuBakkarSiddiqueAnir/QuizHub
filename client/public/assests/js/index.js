@@ -44,7 +44,10 @@ function loadHTMLTable(data, page){
         tableHTML += option1; 
         tableHTML += `<h3 style="margin-top: 15px; margin-left:35px;"> Answer : ${quiz.answer} </h3>`
         tableHTML += `<h4 style="margin-top: 7px; margin-left:35px;"> Catagory : ${quiz.tag} </h4>`
-        if(page === "profile")  tableHTML += `<h3 style="margin-top: 0px; margin-left:90%"> <i class="fas fa-trash"></i> </h3>`
+        if(page === "profile"){
+            tableHTML += `<h3  style="margin-top: 0px; margin-left:90%; "> <i quiz_id=${quiz._id} style="cursor:pointer" class="fas fa-edit edit"></i> </h3>`
+            tableHTML += `<h3 style="margin-top: 8px; margin-left:90%; cursor:pointer";> <i quiz_id=${quiz._id}  class="fas fa-trash delete"></i> </h3>`  
+        }  
         tableHTML += ` </div>
         </div>`
 

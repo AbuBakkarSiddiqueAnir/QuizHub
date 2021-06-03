@@ -41,6 +41,16 @@ add_quiz_submit.onclick = (event) =>{
         })
         .then(data =>{
             if(data.status === 201){
+                
+
+                question.value = "" 
+                option1.value = "";
+                option2.value = "";
+                option3.value = "";
+                option4.value = "";
+                answer.value = "";
+                tags.value = "";
+
                 return data.json()
             }
             throw new Error("wrong status code")
