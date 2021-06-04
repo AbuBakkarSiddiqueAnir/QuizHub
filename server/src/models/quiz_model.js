@@ -94,9 +94,11 @@ quizSchemaWithOwner.statics.insertMassQuizess = () => {
     }catch(e){
         console.log("can't make obj")
     }
-   
+    console.log(quizess)
     return quizess;
 }
+
+
 
 
 const ownerQuiz = mongoose.model('ownerQuiz', quizSchemaWithOwner);

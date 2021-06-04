@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const {ownerQuiz , withoutOwnerQuiz} = require('../models/quiz_model');
-const auth = require('../middleware/middleware')
+const auth = require('../middleware/middleware');
+
+
 
 //creating quizess
 

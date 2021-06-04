@@ -78,7 +78,11 @@ function notifier(data, event){
 
 
 function updateQuiz(event, data) {
-    let element = event.target.parentElement.parentElement.parentElement
+    
+    let element = event.target.parentElement.parentElement.parentElement;
+    let quiz_index = event.target.getAttribute("quiz_index");
+    console.log(quiz_index)
+
     let optionsOfquiz = ``;
     let idGenerator = 1;
     for(let option of data.options){
@@ -118,11 +122,17 @@ function updateQuiz(event, data) {
     `
 
     element.innerHTML = updateQuizInput;
-   
+
+
+    document.getElementById("updateBtn").addEventListener("click",function (event){
+        updatingQuizInput(event, element, quiz_index)
+    })
 }
 
-document.getElementById("updateBtn").addEventListener("click",updatingQuizInput(event))
-function updatingQuizInput(event){
+
+
+
+function updatingQuizInput(event, element, quiz_index){
 
     const question = document.querySelector("#question");
     const option1 = document.querySelector("#option1");
@@ -164,27 +174,53 @@ function updatingQuizInput(event){
         })
         .then(data =>{
             if(data.status === 200){
-                
-
-                question.value = "" 
-                option1.value = "";
-                option2.value = "";
-                option3.value = "";
-                option4.value = "";
-                answer.value = "";
-                tags.value = "";
-
-                return data.json()
+               return data.json()
             }
             throw new Error("wrong status code")
         })
         .then(data =>{
-            console.log(data)
+          
+            
+            return abcd(element, data, "profile",quiz_index)
+            
         }).catch(err =>{
-            event.preventDefault()
+        
             console.log(err)
         } );
     }else{
         alert("Fill out the whole form before submitting")
     }   
+}
+
+
+
+function abcd(element, data, page, quiz_index){
+    console.log(data ,element)
+
+    let tableData = ``
+
+    let idGenerator = 100;
+   
+        
+        var tableHTML = `<div> <div> <h2 id="to-update-question">${quiz_index}. ${data.question}</h2></div> <div class="options-area">`
+        let option1 = ``;
+        for(let option of data.options){
+            option1 += `<label class="option" id="${idGenerator}"> ->${option.option}</label><br>`
+            idGenerator++;
+        }
+        tableHTML += option1; 
+        tableHTML += `<h3 style="margin-top: 15px; margin-left:35px;" id="to-update-answer"> Answer : ${data.answer} </h3>`
+        tableHTML += `<h4 style="margin-top: 7px; margin-left:35px;" id="to-update-quiztag"> Catagory : ${data.tag} </h4>`
+        if(page === "profile"){
+            tableHTML += `<h3  style="margin-top: 0px; margin-left:90%; "> <i quiz_id=${data._id} quiz_index="${quiz_index}" style="cursor:pointer" class="fas fa-edit edit"></i> </h3>`
+            tableHTML += `<h3 style="margin-top: 8px; margin-left:90%; cursor:pointer";> <i quiz_id=${data._id}  class="fas fa-trash delete"></i> </h3>`  
+        }  
+        tableHTML += ` </div>
+        </div>`
+
+        tableData += tableHTML;
+     
+       
+    
+   return element.innerHTML = tableData
 }

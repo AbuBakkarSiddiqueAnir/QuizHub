@@ -56,6 +56,7 @@ add_quiz_submit.onclick = (event) =>{
             throw new Error("wrong status code")
         })
         .then(data =>{
+            console.log(data)
             addquizsuccess(data)
         }).catch(err =>{
             event.preventDefault()

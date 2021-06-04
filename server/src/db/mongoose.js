@@ -7,6 +7,8 @@ try {
         useCreateIndex: true,
         useUnifiedTopology: true
     })
+ 
+    
 
 } catch (error) {
     throw new Error("Can't connect to the database");
