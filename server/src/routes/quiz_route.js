@@ -41,14 +41,34 @@ router.get('/quiz/profile/:id', auth, async (req, res) => {
 
 //quering quizess
 
+// router.get('/quiz/profile/', auth, async (req, res) => {
+
+//     try{
+
+//         //const quizess = await ownerQuiz.find({owner : req.user._id});
+//         const quizess = await req.user.populate({
+//             path : "quiz",
+//             match : {},
+//             options : {
+//                 limit : parseInt(req.query.limit),
+//                 skip : parseInt(req.query.skip)
+//             }
+//         }).execPopulate()
+      
+
+//         res.status(200).send({mass_quizess : quizess.quiz})
+//     }catch(err){
+//         res.status(400).send({err})
+//     }
+// })
+
+
 router.get('/quiz/profile/', auth, async (req, res) => {
 
     try{
 
         //const quizess = await ownerQuiz.find({owner : req.user._id});
-        const quizess = await req.user.populate({
-            path : "quiz",
-            match : {},
+        const quizess = await ownerQuiz.populate({
             options : {
                 limit : parseInt(req.query.limit),
                 skip : parseInt(req.query.skip)
@@ -61,7 +81,6 @@ router.get('/quiz/profile/', auth, async (req, res) => {
         res.status(400).send({err})
     }
 })
-
 
 
 //update quiz

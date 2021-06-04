@@ -63,12 +63,22 @@ const userSchema = new mongoose.Schema({
         trim : true,
         default : 0
     },
-    c_answeredQuizId : [{
+    correctAnswerInOther:{
+        type : Number,
+        trim : true,
+        default : 0
+    },
+    wrongAnsweredInOther:{
+        type : Number,
+        trim : true,
+        default : 0
+    },
+    c_answeredQuizIds : [{
         quizids : {
             type : String
         }
     }],
-    w_answeredQuizId : [{
+    w_answeredQuizIds : [{
         quizids : {
             type : String
         }
