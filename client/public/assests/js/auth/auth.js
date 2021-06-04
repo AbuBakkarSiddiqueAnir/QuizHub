@@ -17,6 +17,7 @@ function auth() {
     }
 }
 
+
 function displayLoggedInUsername(data){
     const usernameArea = document.querySelector("#loggedin-username");
     usernameArea.innerText = data.username;

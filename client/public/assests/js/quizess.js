@@ -64,28 +64,5 @@ function loadingAnimation() {
 }
 
 
-const activeTagBtn = (btn) => {
-    const physicsBtn = document.querySelector("#physics");
-    const csBtn = document.querySelector("#cs");
-    const gi = document.querySelector("#gi");
-    const other = document.querySelector("#other");
 
-    if(btn.id === "h3p" || btn.id === "h3c" || btn.id === "h3g" || btn.id === "h3o"){
-        physicsBtn.style.backgroundColor = "#0deb99"
-        csBtn.style.backgroundColor = "#0deb99"
-        gi.style.backgroundColor = "#0deb99";
-        other.style.backgroundColor = "#0deb99"
-
-        btn.parentNode.style.backgroundColor = "#0a8256"
-
-    }else{
-        physicsBtn.style.backgroundColor = "#0deb99"
-        csBtn.style.backgroundColor = "#0deb99"
-        gi.style.backgroundColor = "#0deb99"
-        other.style.backgroundColor = "#0deb99"
-
-        btn.style.backgroundColor = "#0a8256"
-    }
-
-}
 
