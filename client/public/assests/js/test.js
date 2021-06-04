@@ -8,14 +8,14 @@ const nextQuestion = document.querySelector("#next-question");
 
 
 
-// answerSubmit.onclick = (event) => {
+answerSubmit.onclick = (event) => {
 
-// }
+}
 
 
-// prevQuestion.onclick = (event) => {
+prevQuestion.onclick = (event) => {
 
-// }
+}
 
 let skip = 0;
 
@@ -24,10 +24,6 @@ nextQuestion.onclick = (event) => {
     nextAndPrevQuestionLoader(skip);
     skip++;
 }
-
-
-
-
 
 
 function nextAndPrevQuestionLoader(skip) {

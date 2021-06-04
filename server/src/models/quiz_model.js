@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const fs = require('fs');
 const path = require('path');
+var mongoosePaginate = require('mongoose-paginate');
 
 
 
@@ -98,7 +99,7 @@ quizSchemaWithOwner.statics.insertMassQuizess = () => {
     return quizess;
 }
 
-
+quizSchemaWithOwner.plugin(mongoosePaginate)
 
 
 const ownerQuiz = mongoose.model('ownerQuiz', quizSchemaWithOwner);

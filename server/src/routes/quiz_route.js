@@ -41,14 +41,34 @@ router.get('/quiz/profile/:id', auth, async (req, res) => {
 
 //quering quizess
 
+router.get('/quiz/profile/', auth, async (req, res) => {
+
+    try{
+
+        //const quizess = await ownerQuiz.find({owner : req.user._id});
+        const quizess = await req.user.populate({
+            path : "quiz",
+            match : {},
+            options : {
+                limit : parseInt(req.query.limit),
+                skip : parseInt(req.query.skip)
+            }
+        }).execPopulate()
+      
+
+        res.status(200).send({mass_quizess : quizess.quiz})
+    }catch(err){
+        res.status(400).send({err})
+    }
+ })
+
+
 // router.get('/quiz/profile/', auth, async (req, res) => {
 
 //     try{
 
 //         //const quizess = await ownerQuiz.find({owner : req.user._id});
-//         const quizess = await req.user.populate({
-//             path : "quiz",
-//             match : {},
+//         const quizess = await ownerQuiz.populate({
 //             options : {
 //                 limit : parseInt(req.query.limit),
 //                 skip : parseInt(req.query.skip)
@@ -61,26 +81,6 @@ router.get('/quiz/profile/:id', auth, async (req, res) => {
 //         res.status(400).send({err})
 //     }
 // })
-
-
-router.get('/quiz/profile/', auth, async (req, res) => {
-
-    try{
-
-        //const quizess = await ownerQuiz.find({owner : req.user._id});
-        const quizess = await ownerQuiz.populate({
-            options : {
-                limit : parseInt(req.query.limit),
-                skip : parseInt(req.query.skip)
-            }
-        }).execPopulate()
-      
-
-        res.status(200).send({mass_quizess : quizess.quiz})
-    }catch(err){
-        res.status(400).send({err})
-    }
-})
 
 
 //update quiz
@@ -232,6 +232,25 @@ router.get('/quiz/mass_quizess/other', auth, async (req, res) => {
         })
     }
 })
+
+//quiz test routes
+
+router.get('/quiz/test/physics', auth, async (req, res) => {
+    try{
+ 
+        const mass_quizess = await ownerQuiz.paginate({"tag" : "physics"},{offset : parseInt(req.query.skip), limit :parseInt(req.query.limit)})
+        res.status(200).send({mass_quizess})
+    }catch(err){
+        res.status(500).send({
+            operation  : "couldn't fetch mass_quizess"
+        })
+    }
+})
+
+
+
+
+
 
 
 module.exports = router;

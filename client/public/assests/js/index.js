@@ -31,6 +31,7 @@ const unsuccessfulLogOutFromQuizHub = (error) => {
 function loadHTMLTable(data, page){
     
     const table = document.querySelector("#my-quizess-container");
+    console.log(data)
     table.innerHTML = ""
     let tableData = ``
     let index = 1;
