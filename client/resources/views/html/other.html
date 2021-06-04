@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../../public/assests/css/profile.css" />
+
+    <title>Quiz Hub</title>
+  </head>
+
+  <body>
+    <!-- navbar area -->
+    <div class="navbar">
+      <div class="flex-container" style="position: relative">
+        <div class="logo">
+          <h1>Quiz Hub</h1>
+        </div>
+
+        <h4 style="position: absolute; right: 20px">
+          <i style="cursor: pointer; color: white" class="fas fa-user">
+            <span id="loggedin-username"> </span>
+          </i>
+        </h4>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown-test">
+                <a style="cursor: pointer">Test</a>
+                <div class="dropdown-content-test">
+                  <a href="physics-test.html">Physics</a>
+                  <a href="cs-test.html">CS</a>
+                  <a href="gi-test.html">GI</a>
+                  <a href="other.html">Other</a>
+                </div>
+              </li>
+            <li><a href="quizess.html">Quizess</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout">Log out</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- content area -->
+    <div class="content-area">
+      <div class="quiz-container-area">
+        <div class="quiz-container-btn-area">
+            <h2>Other Categorized Quiz Test</h2>
+        </div>
+        <div class="quiz-container-test-area">
+          <div class="test-quiz-area">
+            <div class="question-area">
+              <h2>
+                How much time it takes for light ray to visit earth from sun ?
+              </h2>
+            </div>
+            <div class="options-area" style="margin-top:30px">
+              <input type="radio" id="op1" name="options" value="op1" style="margin-top:7px" />
+              <label class="option" for="male">Hydrometer</label><br />
+              <input type="radio" id="op2" name="options" value="op2" style="margin-top:10px"/>
+              <label class="option" for="female">Hygrometer</label><br />
+              <input type="radio" id="op3" name="options" value="op3" style="margin-top:10px"/>
+              <label class="option" for="male">Lactometer</label><br />
+              <input type="radio" id="op4" name="options" value="op4" style="margin-top:10px"/>
+              <label class="option" for="male">Barometer</label><br />
+            </div>
+          </div>
+          <div class="quiz-container-btn-area" style="grid-gap: 30px">
+            <div class="physics">
+              <h3 id="ans-submit">SUBMIT</h3>
+            </div>
+            <div class="cs">
+              <h3 id="prev-question">PREV</h3>
+            </div>
+            <div class="cs">
+              <h3 id="next-question">NEXT</h3>
+            </div>
+          </div>
+        </div>
+        
+        <div class="test-score">
+          <div class="score">
+            <h2><span>Correct - </span> 34</h2>
+            <h2><span>Wrong - </span>2</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Copyright &copy; 2021</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-github fa-2x"></i></a>
+          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="../../../public/assests/js/auth/auth.js"></script>
+    <script src="../../../public/assests/js/index.js"></script>
+    <script src="../../../public/assests/js/test.js"></script>
+  </body>
+</html>
