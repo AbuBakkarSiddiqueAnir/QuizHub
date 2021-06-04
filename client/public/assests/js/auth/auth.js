@@ -8,7 +8,7 @@ function auth() {
         })
         .then(response => response.json())
         .then(data => {
-            if(data.status == 200) return
+            return displayLoggedInUsername(data)
         })
         .catch(error =>  window.location.replace('login.html'))
 
@@ -16,6 +16,13 @@ function auth() {
         window.location.replace('login.html')
     }
 }
+
+function displayLoggedInUsername(data){
+    const usernameArea = document.querySelector("#loggedin-username");
+    usernameArea.innerText = data.username;
+
+}
+
 
 function authOnLogin() {
     try{ 
@@ -27,9 +34,12 @@ function authOnLogin() {
         })
         .then(response => response.json())
         .then(data => {
-            if(data.status == 200) return window.location.replace("home.html")
+            console.log("previously logged in")
+             return window.location.replace("home.html")
         })
-        .catch(error =>  {})
+        .catch(error =>  {
+            console.log("not logged in")
+        })
 
     }catch(error){
         return 
