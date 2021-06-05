@@ -82,14 +82,47 @@ const activeTagBtn = (btn) => {
   }
 };
 
-function quizTestParser(catagory, skip) {
-  console.log(catagory);
+async function quizTestParser(catagory, skip) {
+  try {
+    var notAllowedAnswer = await fetch("http://localhost:8080/user/profile", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        let notAllowedCorrectAns = data.c_answeredQuizIds;
+        let notAllowedWrongAns = data.w_answeredQuizIds;
+
+        return [notAllowedCorrectAns, notAllowedWrongAns];
+      })
+      .catch((error) => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+
+  function notAllowedAnswerObjMaker() {
+    let a = [];
+    for (let obj of notAllowedAnswer) {
+      for (let objchild1 of obj) {
+        a.push(objchild1.quizids);
+      }
+    }
+    return [...new Set(a)];
+  }
+  let notAllowedAnswerObjMakerData = notAllowedAnswerObjMaker();
   let tag = catagory;
+  console.log(notAllowedAnswerObjMakerData);
   fetch(`http://localhost:8080/quiz/test/${tag}?skip=${skip}&limit=1`, {
-    method: "GET",
+    method: "POST",
     headers: {
+      "Content-type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("token"),
-    },
+      },
+      body: JSON.stringify({
+        data: notAllowedAnswerObjMakerData,
+      }),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -97,7 +130,7 @@ function quizTestParser(catagory, skip) {
       quizTestHtmlLoader(data, skip);
     })
     .catch((error) => {
-      notifier(error);
+      notifier(error, skip);
     });
 
   function quizTestHtmlLoader(data, skip) {
@@ -138,7 +171,8 @@ function quizTestParser(catagory, skip) {
 
     quizTestArea.innerHTML = testHtml;
     const notification = document.querySelector("#notification");
-    notification.innerText = "Physics Quiz Test";
+
+    notification.innerText = "Testify your disgusting brain";
 
     document
       .querySelector("#next-question")
@@ -163,9 +197,12 @@ function quizTestParser(catagory, skip) {
     quizTestParser(tag, skip);
   }
 
-  function notifier(error) {
+  function notifier(error, skip) {
     const notification = document.querySelector("#notification");
     notification.innerText = "We got no more quiz for you";
+    if (skip < 1) {
+      notification.innerHTML = "No quizess at prev<span>&#128512</span>";
+    }
   }
 
   function answerSubmit(answer) {

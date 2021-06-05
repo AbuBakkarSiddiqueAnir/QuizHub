@@ -6,6 +6,7 @@ const auth = require("../middleware/middleware");
 //creating quizess
 
 router.post("/quiz/profile", auth, async (req, res) => {
+  
   const quiz = new ownerQuiz({
     ...req.body,
     owner: req.user._id,
@@ -59,25 +60,7 @@ router.get("/quiz/profile/", auth, async (req, res) => {
   }
 });
 
-// router.get('/quiz/profile/', auth, async (req, res) => {
 
-//     try{
-
-//         //const quizess = await ownerQuiz.find({owner : req.user._id});
-//         const quizess = await ownerQuiz.populate({
-//             options : {
-//                 limit : parseInt(req.query.limit),
-//                 skip : parseInt(req.query.skip)
-//             }
-//         }).execPopulate()
-
-//         res.status(200).send({mass_quizess : quizess.quiz})
-//     }catch(err){
-//         res.status(400).send({err})
-//     }
-// })
-
-//update quiz
 
 router.patch("/quiz/profile/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
@@ -215,12 +198,17 @@ router.get("/quiz/mass_quizess/other", auth, async (req, res) => {
 
 //quiz displaying routes physics
 
-router.get("/quiz/test/physics", auth, async (req, res) => {
+router.post("/quiz/test/physics", auth, async (req, res) => {
+  console.log(req.body.data)
+
+
   try {
     const mass_quizess = await ownerQuiz.paginate(
       { tag: "physics" },
       { offset: parseInt(req.query.skip), limit: parseInt(req.query.limit) }
     );
+
+
     res.status(200).send({ mass_quizess });
   } catch (err) {
     res.status(500).send({
@@ -229,8 +217,8 @@ router.get("/quiz/test/physics", auth, async (req, res) => {
   }
 });
 
-//quiz displaying routes cs
 
+//quiz displaying routes cs
 router.get("/quiz/test/cs", auth, async (req, res) => {
   try {
     const mass_quizess = await ownerQuiz.paginate(
