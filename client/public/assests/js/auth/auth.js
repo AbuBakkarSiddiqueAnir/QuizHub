@@ -8,6 +8,11 @@ function auth() {
         })
         .then(response => response.json())
         .then(data => {
+
+            loggedInUser_id = data._id;
+            noOfCorrectAnswers = data.correctAnswerInPhysics;
+            arrayOfCorrectAnswersIds = data.c_answeredQuizIds;
+            
             return displayLoggedInUsername(data)
         })
         .catch(error =>  window.location.replace('login.html'))
@@ -16,6 +21,7 @@ function auth() {
         window.location.replace('login.html')
     }
 }
+
 
 
 function displayLoggedInUsername(data){

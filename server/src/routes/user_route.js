@@ -59,7 +59,7 @@ router.patch("/user/profile", auth, async (req, res) =>{
 
     try{
         const user = await userModel.findById(req.user._id);
-        updates.forEach((update)=>user[update] = req.body[update])
+        updates.forEach((update) => user[update] = req.body[update])
         await user.save()
         res.status(200).send(user)
 
@@ -81,6 +81,29 @@ router.delete('/user/profile', auth, async (req, res) => {
         res.send({operation : "couldn't delete user account",err})
     }
 })
+
+
+
+//physics correct ans
+
+router.patch('/user/profile/physics/correct-ans', auth, async (req, res) => {
+    try{
+
+        const updatedUser = await userModel.updateOne({_id:req.body.loggedInUser_id},{$set : {correctAnswerInPhysics : req.body.noOfCorrectAnswers, c_answeredQuizIds : req.body.arrayOfCorrectAnswersIds}})
+        res.status(200).send({updatedUser})
+
+    }catch(error){
+
+        console.log(error)
+        res.send({operation : "couldn't add your correct ans to database"})
+
+    }
+})
+
+
+
+
+
 
 
 module.exports = router;

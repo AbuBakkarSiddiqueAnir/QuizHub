@@ -11,6 +11,13 @@
   box-sizing: border-box;
   margin : 0px;
   padding : 0px;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+   user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }
 
 body {
@@ -353,7 +360,7 @@ table th {
 
 .quiz-container-test-area{
   max-width: 430px;
-  height:auto;
+  min-height:440px;
   margin: 0 auto;
   margin-top: 30px;
   background:rgba(255, 255, 255, 0.1);
