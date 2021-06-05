@@ -85,8 +85,8 @@ router.patch("/user/profile/physics/correct-ans", auth, async (req, res) => {
       { _id: req.body.loggedInUser_id },
       {
         $set: {
-          correctAnswerInPhysics: req.body.noOfCorrectAnswers,
-          c_answeredQuizIds: req.body.arrayOfCorrectAnswersIds,
+          correctAnswerInPhysics: req.body.noOfanswers,
+          c_answeredQuizIds: req.body.arrayAnswersIds,
         },
       }
     );
@@ -96,6 +96,29 @@ router.patch("/user/profile/physics/correct-ans", auth, async (req, res) => {
     res.send({ operation: "couldn't add your correct ans to database" });
   }
 });
+
+
+//physics wrong ans
+
+router.patch("/user/profile/physics/wrong-ans", auth, async (req, res) => {
+  try {
+    const updatedUser = await userModel.updateOne(
+      { _id: req.body.loggedInUser_id },
+      {
+        $set: {
+          wrongAnswerInPhysics: req.body.noOfanswers,
+          w_answeredQuizIds: req.body.arrayAnswersIds,
+        },
+      }
+    );
+    res.status(200).send({ updatedUser });
+  } catch (error) {
+    console.log(error);
+    res.send({ operation: "couldn't add your correct ans to database" });
+  }
+});
+
+
 
 //cs correct answer
 
@@ -105,8 +128,8 @@ router.patch("/user/profile/cs/correct-ans", auth, async (req, res) => {
       { _id: req.body.loggedInUser_id },
       {
         $set: {
-          correctAnswerInPhysics: req.body.noOfCorrectAnswers,
-          c_answeredQuizIds: req.body.arrayOfCorrectAnswersIds,
+          correctAnswerInCS: req.body.noOfanswers,
+          c_answeredQuizIds: req.body.arrayAnswersIds,
         },
       }
     );
@@ -116,6 +139,27 @@ router.patch("/user/profile/cs/correct-ans", auth, async (req, res) => {
     res.send({ operation: "couldn't add your correct ans to database" });
   }
 });
+
+//cs wrong ans
+
+router.patch("/user/profile/cs/wrong-ans", auth, async (req, res) => {
+  try {
+    const updatedUser = await userModel.updateOne(
+      { _id: req.body.loggedInUser_id },
+      {
+        $set: {
+          correctAnswerInCS: req.body.noOfanswers,
+          w_answeredQuizIds: req.body.arrayAnswersIds,
+        },
+      }
+    );
+    res.status(200).send({ updatedUser });
+  } catch (error) {
+    console.log(error);
+    res.send({ operation: "couldn't add your correct ans to database" });
+  }
+});
+
 
 //gi correct answer
 
@@ -125,8 +169,8 @@ router.patch("/user/profile/gi/correct-ans", auth, async (req, res) => {
       { _id: req.body.loggedInUser_id },
       {
         $set: {
-          correctAnswerInPhysics: req.body.noOfCorrectAnswers,
-          c_answeredQuizIds: req.body.arrayOfCorrectAnswersIds,
+          correctAnswerInGI: req.body.noOfanswers,
+          c_answeredQuizIds: req.body.arrayAnswersIds,
         },
       }
     );
@@ -136,6 +180,27 @@ router.patch("/user/profile/gi/correct-ans", auth, async (req, res) => {
     res.send({ operation: "couldn't add your correct ans to database" });
   }
 });
+
+//wrong ans in gi
+
+router.patch("/user/profile/gi/wrong-ans", auth, async (req, res) => {
+  try {
+    const updatedUser = await userModel.updateOne(
+      { _id: req.body.loggedInUser_id },
+      {
+        $set: {
+          wrongAnswerInGI: req.body.noOfanswers,
+          w_answeredQuizIds: req.body.arrayAnswersIds,
+        },
+      }
+    );
+    res.status(200).send({ updatedUser });
+  } catch (error) {
+    console.log(error);
+    res.send({ operation: "couldn't add your correct ans to database" });
+  }
+});
+
 
 //other correct answer
 
@@ -145,8 +210,8 @@ router.patch("/user/profile/other/correct-ans", auth, async (req, res) => {
       { _id: req.body.loggedInUser_id },
       {
         $set: {
-          correctAnswerInPhysics: req.body.noOfCorrectAnswers,
-          c_answeredQuizIds: req.body.arrayOfCorrectAnswersIds,
+          correctAnswerInOther: req.body.noOfanswers,
+          c_answeredQuizIds: req.body.arrayAnswersIds,
         },
       }
     );
@@ -156,5 +221,28 @@ router.patch("/user/profile/other/correct-ans", auth, async (req, res) => {
     res.send({ operation: "couldn't add your correct ans to database" });
   }
 });
+
+
+//wrong ans in other
+
+router.patch("/user/profile/other/wrong-ans", auth, async (req, res) => {
+  try {
+    const updatedUser = await userModel.updateOne(
+      { _id: req.body.loggedInUser_id },
+      {
+        $set: {
+          wrongAnsweredInOther: req.body.noOfanswers,
+          w_answeredQuizIds: req.body.arrayAnswersIds,
+        },
+      }
+    );
+    res.status(200).send({ updatedUser });
+  } catch (error) {
+    console.log(error);
+    res.send({ operation: "couldn't add your correct ans to database" });
+  }
+});
+
+
 
 module.exports = router;

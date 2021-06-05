@@ -173,26 +173,90 @@ function quizTestParser(catagory, skip) {
       'input[name="options"]:checked'
     );
     if (getSelectedValue === null) {
-      console.log("not selected");
+      nullAnsNotifier();
     } else if (getSelectedValue.value === answer) {
-      updateUserProfileForCorrectAnswer();
-    } else {
-      console.log("Wrong selection", getSelectedValue, "answer", answer);
+      correntAnsNotifier();
+      updateUserProfileForCorrectOrWrongAnswer("correct-ans");
+    } else if (getSelectedValue.value !== answer) {
+      wrongAnsNotifier();
+      updateUserProfileForCorrectOrWrongAnswer("wrong-ans");
     }
   }
 
-  function updateUserProfileForCorrectAnswer() {
+  function correntAnsNotifier() {
+    const notification = document.querySelector("#notification");
+    notification.innerText = "Your answer is correct";
+  }
+
+  function wrongAnsNotifier() {
+    const notification = document.querySelector("#notification");
+    notification.innerText = "Your answer is incorrect";
+  }
+  function nullAnsNotifier() {
+    const notification = document.querySelector("#notification");
+    notification.innerText = "Select option before submitting";
+  }
+
+  function updateUserProfileForCorrectOrWrongAnswer(path) {
     const quiz_id_element_for_answer_submission = document.querySelector(
       "#quiz_id_for_answer_submission"
     );
     const quiz_id =
       quiz_id_element_for_answer_submission.getAttribute("quiz_id");
 
-    arrayOfCorrectAnswersIds.push({
-      quizids: quiz_id,
-    });
+    let a, b;
 
-    fetch(`http://localhost:8080/user/profile/${tag}/correct-ans`, {
+    if (tag === "physics" && path === "correct-ans") {
+      arrayOfCorrectAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfCorrectAnswersInPhysics;
+      b = arrayOfCorrectAnswersIds;
+    } else if (tag === "physics" && path === "wrong-ans") {
+      arrayOfWrongAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfWrongAnswersInPhysics;
+      b = arrayOfWrongAnswersIds;
+    } else if (tag === "cs" && path === "correct-ans") {
+      arrayOfCorrectAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfCorrectAnswersInCs;
+      b = arrayOfCorrectAnswersIds;
+    } else if (tag === "cs" && path === "wrong-ans") {
+      arrayOfWrongAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfWrongAnswersInCs;
+      b = arrayOfWrongAnswersIds;
+    } else if (tag === "gi" && path === "correct-ans") {
+      arrayOfCorrectAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfCorrectAnswersInGi;
+      b = arrayOfCorrectAnswersIds;
+    } else if (tag === "gi" && path === "wrong-ans") {
+      arrayOfWrongAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfWrongAnswersInGi;
+      b = arrayOfWrongAnswersIds;
+    } else if (tag === "other" && path === "correct-ans") {
+      arrayOfCorrectAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfCorrectAnswersInOther;
+      b = arrayOfCorrectAnswersIds;
+    } else if (tag === "other" && path === "wrong-ans") {
+      arrayOfWrongAnswersIds.push({
+        quizids: quiz_id,
+      });
+      a = noOfWrongAnswersInOther;
+      b = arrayOfWrongAnswersIds;
+    }
+
+    fetch(`http://localhost:8080/user/profile/${tag}/${path}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -200,8 +264,8 @@ function quizTestParser(catagory, skip) {
       },
       body: JSON.stringify({
         loggedInUser_id: loggedInUser_id,
-        noOfCorrectAnswers: noOfCorrectAnswers,
-        arrayOfCorrectAnswersIds: arrayOfCorrectAnswersIds,
+        noOfanswers: a,
+        arrayAnswersIds: b,
       }),
     })
       .then((data) => {
