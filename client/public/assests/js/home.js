@@ -1,17 +1,15 @@
-document.addEventListener('DOMContentLoaded',auth())
+document.addEventListener("DOMContentLoaded", auth());
 
-document.addEventListener("DOMContentLoaded",function(){
-    fetch("http://localhost:8080/quiz/mass_quizess",{
-        method: "GET",
-        headers: {
-            Authorization:
-                "Bearer " + localStorage.getItem("token")
-        }
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("http://localhost:8080/quiz/mass_quizess", {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
     })
-    .then(response =>response.json())
-    .then(data =>{
-        console.log(data)
-    }).catch(error =>console.log(error))
-})
-
-
+    .catch((error) => console.log(error));
+});
