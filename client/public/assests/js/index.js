@@ -83,6 +83,8 @@ const activeTagBtn = (btn) => {
 };
 
 async function quizTestParser(catagory, skip) {
+  let k, m, c, d, e, f, g, h;
+
   try {
     var notAllowedAnswer = await fetch("http://localhost:8080/user/profile", {
       method: "GET",
@@ -95,6 +97,15 @@ async function quizTestParser(catagory, skip) {
         let notAllowedCorrectAns = data.c_answeredQuizIds;
         let notAllowedWrongAns = data.w_answeredQuizIds;
 
+        k = data.correctAnswerInPhysics;
+        m = data.wrongAnswerInPhysics;
+        c = data.correctAnswerInCS;
+        d = data.wrongAnswerInCS;
+        e = data.correctAnswerInGI;
+        f = data.wrongAnswerInGI;
+        g = data.correctAnswerInOther;
+        h = data.wrongAnsweredInOther;
+
         return [notAllowedCorrectAns, notAllowedWrongAns];
       })
       .catch((error) => console.log(error));
@@ -106,30 +117,33 @@ async function quizTestParser(catagory, skip) {
     let a = [];
     for (let obj of notAllowedAnswer) {
       for (let objchild1 of obj) {
-        a.push(objchild1.quizids);
+        a.push({
+          quiz_id: objchild1.quizids,
+          my_answer: objchild1.my_answer,
+        });
       }
     }
     return [...new Set(a)];
   }
-  let notAllowedAnswerObjMakerData = notAllowedAnswerObjMaker();
+  
+  var notAllowedAnswerObjMakerData = notAllowedAnswerObjMaker();
+
   let tag = catagory;
-  console.log(notAllowedAnswerObjMakerData);
+
   fetch(`http://localhost:8080/quiz/test/${tag}?skip=${skip}&limit=1`, {
-    method: "POST",
+    method: "GET",
     headers: {
-      "Content-type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        data: notAllowedAnswerObjMakerData,
-      }),
+    },
   })
     .then((response) => response.json())
     .then((data) => {
       data = data.mass_quizess.docs[0];
+      console.log(data);
       quizTestHtmlLoader(data, skip);
     })
     .catch((error) => {
+      console.log(error);
       notifier(error, skip);
     });
 
@@ -138,10 +152,37 @@ async function quizTestParser(catagory, skip) {
     let optionsHtmlArea = ``;
 
     for (let option of data.options) {
-      let optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
-                           <label class="option" for="${option.option}">${option.option}</label><br />`;
+      optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
+                          <label  class="option" for="${option.option}">${option.option}</label><br />`;
       optionsHtmlArea += optionHtml;
     }
+
+    let submitBtnChecker = `<div id="ans-submit">
+                              <h3 >SUBMIT</h3>
+                            </div>`;
+
+    for (let a of notAllowedAnswerObjMakerData) {
+      if (data._id === a.quiz_id) {
+        submitBtnChecker = "";
+        optionsHtmlArea = ``;
+        for (let option of data.options) {
+          if (option.option === a.my_answer) {
+            optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
+                                <label style="color:red" class="option" for="${option.option}">${option.option}</label><br />`;
+            optionsHtmlArea += optionHtml;
+          } else if (option.option === data.answer) {
+            optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
+                                <label style="color:green" class="option" for="${option.option}">${option.option}</label><br />`;
+            optionsHtmlArea += optionHtml;
+          } else {
+            optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
+                                <label class="option" for="${option.option}">${option.option}</label><br />`;
+            optionsHtmlArea += optionHtml;
+          }
+        }
+      }
+    }
+
     answer = data.answer;
 
     let testHtml = `<div style="position:relative" class="quiz-container-test-area" id="quiz_id">
@@ -159,10 +200,8 @@ async function quizTestParser(catagory, skip) {
                       <div id="prev-question">
                         <h3 >PREV</h3>
                       </div>
-                      <div id="ans-submit">
-                        <h3 >SUBMIT</h3>
-                      </div>
                       
+                      ${submitBtnChecker}
                       <div id="next-question">
                         <h3>NEXT</h3>
                       </div>
@@ -215,8 +254,9 @@ async function quizTestParser(catagory, skip) {
       correntAnsNotifier();
       updateUserProfileForCorrectOrWrongAnswer("correct-ans");
     } else if (getSelectedValue.value !== answer) {
+      myanswerOnQuiz = getSelectedValue.value;
       wrongAnsNotifier();
-      updateUserProfileForCorrectOrWrongAnswer("wrong-ans");
+      updateUserProfileForCorrectOrWrongAnswer("wrong-ans", myanswerOnQuiz);
     }
   }
 
@@ -228,13 +268,20 @@ async function quizTestParser(catagory, skip) {
   function wrongAnsNotifier() {
     const notification = document.querySelector("#notification");
     notification.innerText = "Your answer is incorrect";
+    console.log(document.querySelector("#ans-submit"));
+    document
+      .querySelector("#ans-submit")
+      .removeEventListener("click", function (e) {
+        answerSubmit(answer);
+      });
   }
+
   function nullAnsNotifier() {
     const notification = document.querySelector("#notification");
     notification.innerText = "Select option before submitting";
   }
 
-  function updateUserProfileForCorrectOrWrongAnswer(path) {
+  function updateUserProfileForCorrectOrWrongAnswer(path, myanswerOnQuiz) {
     const quiz_id_element_for_answer_submission = document.querySelector(
       "#quiz_id_for_answer_submission"
     );
@@ -247,49 +294,57 @@ async function quizTestParser(catagory, skip) {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
-      a = noOfCorrectAnswersInPhysics;
+      a = k + 1;
       b = arrayOfCorrectAnswersIds;
     } else if (tag === "physics" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
+        my_answer: myanswerOnQuiz,
       });
-      a = noOfWrongAnswersInPhysics;
+      a = m + 1;
       b = arrayOfWrongAnswersIds;
     } else if (tag === "cs" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
-      a = noOfCorrectAnswersInCs;
+      a = c + 1;
       b = arrayOfCorrectAnswersIds;
     } else if (tag === "cs" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
+        my_answer: myanswerOnQuiz,
       });
-      a = noOfWrongAnswersInCs;
+
+      a = d + 1;
       b = arrayOfWrongAnswersIds;
     } else if (tag === "gi" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
-      a = noOfCorrectAnswersInGi;
+      a = e + 1;
       b = arrayOfCorrectAnswersIds;
     } else if (tag === "gi" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
+        my_answer: myanswerOnQuiz,
       });
-      a = noOfWrongAnswersInGi;
+
+      a = f + 1;
       b = arrayOfWrongAnswersIds;
     } else if (tag === "other" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
-      a = noOfCorrectAnswersInOther;
+
+      a = g + 1;
       b = arrayOfCorrectAnswersIds;
     } else if (tag === "other" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
+        my_answer: myanswerOnQuiz,
       });
-      a = noOfWrongAnswersInOther;
+
+      a = h + 1;
       b = arrayOfWrongAnswersIds;
     }
 

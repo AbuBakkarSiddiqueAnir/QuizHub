@@ -79,6 +79,7 @@ const userSchema = new mongoose.Schema(
         quizids: {
           type: String,
         },
+        
       },
     ],
     w_answeredQuizIds: [
@@ -86,6 +87,9 @@ const userSchema = new mongoose.Schema(
         quizids: {
           type: String,
         },
+        my_answer: {
+          type: String,
+        }
       },
     ],
     tokens: [

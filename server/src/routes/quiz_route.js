@@ -198,23 +198,53 @@ router.get("/quiz/mass_quizess/other", auth, async (req, res) => {
 
 //quiz displaying routes physics
 
-router.post("/quiz/test/physics", auth, async (req, res) => {
-  console.log(req.body.data)
-
-
+router.get("/quiz/test/physics", auth, async (req, res) => {
   try {
     const mass_quizess = await ownerQuiz.paginate(
       { tag: "physics" },
       { offset: parseInt(req.query.skip), limit: parseInt(req.query.limit) }
     );
-
-
     res.status(200).send({ mass_quizess });
   } catch (err) {
     res.status(500).send({
       operation: "couldn't fetch mass_quizess",
     });
   }
+
+  // try {
+  //   console.log(req.body.data)
+    
+  //   let checker = async () => {
+  //     console.log("Check")
+  //     const quiz = await ownerQuiz.paginate(
+  //       { tag: "physics" },
+  //       { offset: parseInt(req.query.skip), limit: parseInt(req.query.limit) }
+  //     );
+  //     return quiz
+  //   }
+    
+
+    
+  // //  function recursivsOne() {
+  // //       checker().then((data) => {
+  // //       console.log(data.docs[0]._id);
+  // //         if(req.body.data.includes(data.docs[0]._id.toString())){
+  // //           console.log("me here")
+  // //          }
+  // //          else{
+            
+  // //           res.status(200).send({ mass_quizess : data });
+  // //          }
+       
+  // //   })}
+
+  // //   recursivsOne()
+
+  // } catch (err) {
+  //   res.status(500).send({
+  //     operation: "couldn't fetch mass_quizess",
+  //   });
+  // }
 });
 
 

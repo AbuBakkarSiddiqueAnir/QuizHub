@@ -20,7 +20,7 @@ function auth() {
 
         arrayOfCorrectAnswersIds = data.c_answeredQuizIds;
         arrayOfWrongAnswersIds = data.w_answeredQuizIds;
-
+       
         return displayLoggedInUsername(data);
       })
       .catch((error) => window.location.replace("login.html"));
