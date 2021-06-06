@@ -26,6 +26,9 @@ const unsuccessfulLogOutFromQuizHub = (error) => {
 
 function loadHTMLTable(data, page) {
   const table = document.querySelector("#my-quizess-container");
+
+  
+
   console.log(data);
   table.innerHTML = "";
   let tableData = ``;
@@ -52,6 +55,11 @@ function loadHTMLTable(data, page) {
     index++;
   }
   table.innerHTML += tableData;
+
+  if(data.mass_quizess.length === 0) table.innerHTML = `<div style="display:flex;justify-content:center;align-items:center;height:300px;">
+    <h2>No quiz to show</h2>
+  </div>`;
+  
 }
 
 const activeTagBtn = (btn) => {
@@ -83,7 +91,7 @@ const activeTagBtn = (btn) => {
 };
 
 async function quizTestParser(catagory, skip) {
-  let k, m, c, d, e, f, g, h;
+  let k, m, l, n, e, f, g, h;
 
   try {
     var notAllowedAnswer = await fetch("http://localhost:8080/user/profile", {
@@ -99,8 +107,8 @@ async function quizTestParser(catagory, skip) {
 
         k = data.correctAnswerInPhysics;
         m = data.wrongAnswerInPhysics;
-        c = data.correctAnswerInCS;
-        d = data.wrongAnswerInCS;
+        l = data.correctAnswerInCS;
+        n = data.wrongAnswerInCS;
         e = data.correctAnswerInGI;
         f = data.wrongAnswerInGI;
         g = data.correctAnswerInOther;
@@ -210,7 +218,23 @@ async function quizTestParser(catagory, skip) {
 
     quizTestArea.innerHTML = testHtml;
     const notification = document.querySelector("#notification");
-
+    if(tag === "physics"){
+      document.querySelector("#correct-score").innerText = k;
+      document.querySelector("#wrong-score").innerText = m;
+    }
+    else if(tag === "cs"){
+      document.querySelector("#correct-score").innerText = l;
+      document.querySelector("#wrong-score").innerText = n;
+    }
+    else if(tag === "gi"){
+      document.querySelector("#correct-score").innerText = e;
+      document.querySelector("#wrong-score").innerText = f;
+    }
+    else if(tag === "other"){
+      document.querySelector("#correct-score").innerText = g;
+      document.querySelector("#wrong-score").innerText = h;
+    }
+   
     notification.innerText = "Testify your disgusting brain";
 
     document
@@ -238,7 +262,7 @@ async function quizTestParser(catagory, skip) {
 
   function notifier(error, skip) {
     const notification = document.querySelector("#notification");
-    notification.innerText = "We got no more quiz for you";
+    notification.innerHTML = "Nope Here<span>&#128512</span>";
     if (skip < 1) {
       notification.innerHTML = "No quizess at prev<span>&#128512</span>";
     }
@@ -296,6 +320,8 @@ async function quizTestParser(catagory, skip) {
       });
       a = k + 1;
       b = arrayOfCorrectAnswersIds;
+      document.querySelector("#correct-score").innerText = k;
+
     } else if (tag === "physics" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -303,26 +329,34 @@ async function quizTestParser(catagory, skip) {
       });
       a = m + 1;
       b = arrayOfWrongAnswersIds;
+      document.querySelector("#wrong-score").innerText = m ;
+
     } else if (tag === "cs" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
-      a = c + 1;
+      a = l + 1;
       b = arrayOfCorrectAnswersIds;
+      document.querySelector("#correct-score").innerText = l;
+
     } else if (tag === "cs" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
         my_answer: myanswerOnQuiz,
       });
 
-      a = d + 1;
+      a = n + 1;
       b = arrayOfWrongAnswersIds;
+      document.querySelector("#wrong-score").innerText = n ;
+
     } else if (tag === "gi" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
       a = e + 1;
       b = arrayOfCorrectAnswersIds;
+      document.querySelector("#correct-score").innerText = e;
+
     } else if (tag === "gi" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -331,6 +365,8 @@ async function quizTestParser(catagory, skip) {
 
       a = f + 1;
       b = arrayOfWrongAnswersIds;
+      document.querySelector("#wrong-score").innerText = f ;
+
     } else if (tag === "other" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
@@ -338,6 +374,8 @@ async function quizTestParser(catagory, skip) {
 
       a = g + 1;
       b = arrayOfCorrectAnswersIds;
+      document.querySelector("#correct-score").innerText = g;
+
     } else if (tag === "other" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -346,7 +384,9 @@ async function quizTestParser(catagory, skip) {
 
       a = h + 1;
       b = arrayOfWrongAnswersIds;
+      document.querySelector("#wrong-score").innerText = h ;
     }
+    document.querySelector("#ans-submit").style.backgroundColor = "red";
 
     fetch(`http://localhost:8080/user/profile/${tag}/${path}`, {
       method: "PATCH",

@@ -19,9 +19,7 @@
                
             </div>
             <h4 style="position: absolute; right:20px" > <i style="cursor:pointer;color:white" class="fas fa-user">
-                <span id="loggedin-username" >
-
-                </span>
+                <a style="color:white" href="profile.html"><span id="loggedin-username"> </span></a>
             </i></h4>
             <nav>
                 <ul>
@@ -37,7 +35,7 @@
                       </li>
                     <li><a href="quizess.html">Quizess</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="profile.html">Profile</a></li>
+                    <!-- <li><a href="profile.html">Profile</a></li> -->
                     <li><a href="#" id="logout">Log out</a></li>
                 </ul>
             </nav>
@@ -51,9 +49,6 @@
             <div class="quiz-area">
                 <div class="quiz-card-area">
                     <div class="my-quizess-btn-area">
-                        <div class="my-quizess-btn">
-                            <h4>My Quizess</h4>
-                        </div>
                         <div class="add-quiz-btn">
                             <h4><a href="addquiz.html">Add Quiz</a></h4>
                         </div>
@@ -76,11 +71,9 @@
                         <div class="data">
 
                             <span class="pcpercent">
-                                <h5><span>CP-</span>34%</h5>
+                                <h5><span>Correct Percentage--</span><span id="physics-correct-percentage"></span></h5>
                             </span>
-                            <span class="pwpercent">
-                                <h5><span>WR-</span>43%</h5>
-                            </span>
+                        
                         </div>
                     </div>
                     <div class="cs">
@@ -91,10 +84,9 @@
                         <div class="data">
                             
                             <span class="ccpercent">
-                                <h5 ><span>CP-</span>53%</h5>
+                                <h5 ><span>Correct Percentage--</span><span id="cs-correct-percentage"></span></h5>
                             </span>
-                            <span class="cwpercent">
-                                <h5><span>WR-</span>3%</h5>
+
                         </div>
                     </div>
                     <div class="gi">
@@ -104,11 +96,21 @@
                         <div class="data">
                 
                             <span class="gcpercent">
-                                <h5><span>CP-</span> 45%</h5>
+                                <h5><span>Correct Percentage--</span> <span id="gi-correct-percentage"></span></h5>
                             </span>
-                            <span class="gwpercent">
-                                <h5><span>WR-</span> 73%</h5>
+                        
+                        </div>
+                    </div>
+                    <div class="gi">
+                        <div class="logo">
+                            <h4>Others</h4>
+                        </div>
+                        <div class="data">
+                
+                            <span class="gcpercent">
+                                <h5><span>Correct Percentage--</span> <span id="other-correct-percentage"></span></h5>
                             </span>
+                        
                         </div>
                     </div>
                 </div>

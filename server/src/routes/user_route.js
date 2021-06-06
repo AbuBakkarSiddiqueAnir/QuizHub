@@ -148,7 +148,7 @@ router.patch("/user/profile/cs/wrong-ans", auth, async (req, res) => {
       { _id: req.body.loggedInUser_id },
       {
         $set: {
-          correctAnswerInCS: req.body.noOfanswers,
+          wrongAnswerInCS: req.body.noOfanswers,
           w_answeredQuizIds: req.body.arrayAnswersIds,
         },
       }

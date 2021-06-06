@@ -12,10 +12,30 @@ function myQuizessLoaded() {
     })
       .then((response) => response.json())
       .then((data) => {
+        userCorrectAnsPercentage();
         loadHTMLTable(data, "profile");
       })
       .catch((error) => console.log(error));
   } catch (error) {}
+}
+
+function userCorrectAnsPercentage() {
+  document.querySelector("#physics-correct-percentage").innerHTML =
+    percentageDisplay(noOfCorrectAnswersInPhysics, noOfWrongAnswersInPhysics);
+  document.querySelector("#cs-correct-percentage").innerHTML =
+    percentageDisplay(noOfCorrectAnswersInCs, noOfWrongAnswersInCs);
+  document.querySelector("#gi-correct-percentage").innerHTML =
+    percentageDisplay(noOfCorrectAnswersInGi, noOfWrongAnswersInGi);
+  document.querySelector("#other-correct-percentage").innerHTML =
+    percentageDisplay(noOfCorrectAnswersInOther, noOfWrongAnswersInOther);
+
+  function percentageDisplay(a, b) {
+    if (a === 0 && b === 0) {
+      return 0 + "%";
+    } else {
+      return Math.floor((a / (a + b)) * 100) + "%";
+    }
+  }
 }
 
 document.addEventListener("click", function (event) {
@@ -181,7 +201,7 @@ function updatingQuizInput(event, element, quiz_index) {
         throw new Error("wrong status code");
       })
       .then((data) => {
-        return abcd(element, data, "profile", quiz_index);
+        return profileHtmlLoader(element, data, "profile", quiz_index);
       })
       .catch((err) => {
         console.log(err);
@@ -191,7 +211,7 @@ function updatingQuizInput(event, element, quiz_index) {
   }
 }
 
-function abcd(element, data, page, quiz_index) {
+function profileHtmlLoader(element, data, page, quiz_index) {
   console.log(data, element);
 
   let tableData = ``;

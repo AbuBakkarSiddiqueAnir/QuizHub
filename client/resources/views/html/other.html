@@ -35,7 +35,7 @@
 
         <h4 style="position: absolute; right: 20px">
           <i style="cursor: pointer; color: white" class="fas fa-user">
-            <span id="loggedin-username"> </span>
+            <a style="color:white" href="profile.html"><span id="loggedin-username"> </span></a>
           </i>
         </h4>
         <nav>
@@ -52,7 +52,7 @@
             </li>
             <li><a href="quizess.html">Quizess</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="profile.html">Profile</a></li>
+            <!-- <li><a href="profile.html">Profile</a></li> -->
             <li><a href="#" id="logout">Log out</a></li>
           </ul>
         </nav>
@@ -72,8 +72,8 @@
         
         <div class="test-score">
           <div class="score">
-            <h2><span>Correct - </span> 34</h2>
-            <h2><span>Wrong - </span>2</h2>
+            <h2><span>Correct - </span><span id="correct-score"></span></h2>
+            <h2><span>Wrong - </span><span id="wrong-score"></span></h2>
           </div>
         </div>
       </div>
