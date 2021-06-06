@@ -14,10 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.log(error));
 });
 
-
 function tableHtmlParser(data) {
-  console.log(data.users)
-  let users = data.users
+  
+  let users = data.users;
   let tableData = `<table>
                       <tr>
                         <th>Username</th>
@@ -25,24 +24,23 @@ function tableHtmlParser(data) {
                         <th>CS score</th>
                         <th>GI score</th>
                         <th>Other score</th>
-                      </tr>`
-  
+                      </tr>`;
+
   for (let user of users) {
-   let phydiff = user.correctAnswerInPhysics - user.wrongAnswerInPhysics;
-   let csdiff = user.correctAnswerInCS - user.wrongAnswerInCS;
-   let gidiff = user.correctAnswerInGI - user.wrongAnswerInGI;
-   let otherdiff = user.correctAnswerInOther - user.wrongAnsweredInOther;
-    let userData = `<tr>
+    let phydiff = user.correctAnswerInPhysics - user.wrongAnswerInPhysics;
+    let csdiff = user.correctAnswerInCS - user.wrongAnswerInCS;
+    let gidiff = user.correctAnswerInGI - user.wrongAnswerInGI;
+    let otherdiff = user.correctAnswerInOther - user.wrongAnsweredInOther;
+    let userData = `<tr class="adding-neumorphism">
                       <td>${user.username}</td>
                       <td>${phydiff}</td>
                       <td>${csdiff}</td>
                       <td>${gidiff}</td>
                       <td>${otherdiff}</td>
-                    </tr>`
+                    </tr>`;
     tableData += userData;
   }
-  tableData += `</table>`
+  tableData += `</table>`;
   const tableDataArea = document.querySelector("#table-data-area");
-  tableDataArea.innerHTML = tableData
+  tableDataArea.innerHTML = tableData;
 }
-
