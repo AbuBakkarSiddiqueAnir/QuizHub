@@ -16,6 +16,26 @@ router.post("/user", async (req, res) => {
   }
 });
 
+//routes for all users information for home pages
+
+
+router.get("/users/profile/all", auth, async (req, res) => {
+  try {
+    const users = await userModel.find({});
+    if (!users)
+      res.status(404).send("couldn't find the quiz you want to update");
+    else 
+      res.status(200).send({users});
+    
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+
+
+
+
 router.post("/user/login", async (req, res) => {
   try {
     const user = await userModel.findByCredentials(
