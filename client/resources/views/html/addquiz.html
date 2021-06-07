@@ -1,119 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../public/assests/css/profile.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../public/assests/css/profile.css" />
 
-    
     <title>Quiz Hub</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- navbar area -->
     <div class="navbar">
-        <div class="flex-container" style="position:relative;">
-            <div class="logo">
-                <h1>Quiz Hub</h1>
-            </div>
-            <h4 style="position: absolute; right:20px" > <i style="cursor:pointer;color:white" class="fas fa-user">
-                <a style="color:white" href="profile.html"><span id="loggedin-username"> </span></a>
-            </i></h4>
-            <nav>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li class="dropdown-test">
-                        <a style="cursor: pointer">Test</a>
-                        <div class="dropdown-content-test">
-                          <a href="physics_test.html">Physics</a>
-                          <a href="cs_test.html">CS</a>
-                          <a href="gi_test.html">GI</a>
-                          <a href="other.html">Other</a>
-                        </div>
-                      </li>
-                    <li><a href="quizess.html">Quizess</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <!-- <li><a href="profile.html">Profile</a></li> -->
-                    <li><a href="#" id="logout">Log out</a></li>
-                </ul>
-            </nav>
+      <div class="flex-container" style="position: relative">
+        <div class="logo">
+          <h1>Quiz Hub</h1>
         </div>
+        <h4 style="position: absolute; right: 20px">
+          <i style="cursor: pointer; color: white" class="fas fa-user">
+            <a style="color: white" href="profile.html"
+              ><span id="loggedin-username"> </span
+            ></a>
+          </i>
+        </h4>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li class="dropdown-test">
+              <a style="cursor: pointer">Test</a>
+              <div class="dropdown-content-test">
+                <a href="physics_test.html">Physics</a>
+                <a href="cs_test.html">CS</a>
+                <a href="gi_test.html">GI</a>
+                <a href="other.html">Other</a>
+              </div>
+            </li>
+            <li><a href="quizess.html">Quizess</a></li>
+            <li><a href="about.html">About</a></li>
+            <!-- <li><a href="profile.html">Profile</a></li> -->
+            <li><a href="#" id="logout">Log out</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <!-- content area -->
     <div class="content-area">
-        <div class="quiz-container-area">
-            <div class="quiz-container-btn-area">
-                <h2 id="add-quiz-h2"  style="margin: 0 auto;">Add your quiz !!</h2>
-            </div>
-            <div class="quiz-container-add-area">
-                <div class="add-quiz-area">
-                    <div class="add-question-area">
-                        <label for="queston">QUIZ</label>
-                        <textarea type="text" name="question" id="question"></textarea>
-                        <div class="inlineblock">
-                            <label for="option1">Answer</label>
-                            <input type="text" id="answer" name="option1" placeholder="Type correct option" style="font-weight: bold;">
-                        </div>
-                          
-                    </div>
-                    <div class="add-question-option-area">
-                        <div class="inlineblock">
-                            <label for="option1">Tags</label>
-                            <input type="text" id="tags" name="option1" placeholder="physics or cs or gi" style="font-weight: bold;">
-                        </div>
-                        <div class="inlineblock">
-                            <label for="option1">Option 1</label>
-                            <input type="text" id="option1" name="option1" placeholder="">
-                        </div>
-                        <div class="inlineblock">
-                            <label for="option2">Option 2</label>
-                            <input type="text" id="option2" name="option2" placeholder="">
-                        </div>
-                        <div class="inlineblock">
-                            <label for="option3">Option 3</label>
-                            <input type="text" id="option3" name="option3" placeholder="">
-                        </div>
-                        <div class="inlineblock">
-                            <label for="option4">Option 4</label>
-                            <input type="text" id="option4" name="option4" placeholder="">
-                        </div>
-                          
-                    </div>
-                   
-                </div>
-            </div>
-            <div class="quiz-container-btn-area" style="grid-gap: 30px;">
-                <div id="add-quiz-submit">
-                    <h3>SUBMIT</h3>
-                </div>
-            </div>
-            <div class="test-score">
-                <div class="score">       
-                    <h2> <span>Correct - </span> 34</h2>
-                    <h2><span>Wrong - </span>2</h2>
-                </div>
-            </div>
+      <div class="quiz-container-area">
+        <div class="quiz-container-btn-area">
+          <h2 id="add-quiz-h2" style="margin: 0 auto">Add your quiz !!</h2>
         </div>
+        <div class="quiz-container-add-area">
+          <div class="add-quiz-area">
+            <div class="add-question-area">
+              <label for="queston">QUIZ</label>
+              <textarea type="text" name="question" id="question"></textarea>
+              <div class="inlineblock">
+                <label for="option1">Answer</label>
+                <input
+                  type="text"
+                  id="answer"
+                  name="option1"
+                  placeholder="Type correct option"
+                  style="font-weight: bold"
+                />
+              </div>
+            </div>
+            <div class="add-question-option-area">
+              <div class="inlineblock">
+                <label for="option1">Tags</label>
+                <input
+                  type="text"
+                  id="tags"
+                  name="option1"
+                  placeholder="physics or cs or gi"
+                  style="font-weight: bold"
+                />
+              </div>
+              <div class="inlineblock">
+                <label for="option1">Option 1</label>
+                <input type="text" id="option1" name="option1" placeholder="" />
+              </div>
+              <div class="inlineblock">
+                <label for="option2">Option 2</label>
+                <input type="text" id="option2" name="option2" placeholder="" />
+              </div>
+              <div class="inlineblock">
+                <label for="option3">Option 3</label>
+                <input type="text" id="option3" name="option3" placeholder="" />
+              </div>
+              <div class="inlineblock">
+                <label for="option4">Option 4</label>
+                <input type="text" id="option4" name="option4" placeholder="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="quiz-container-btn-area" style="grid-gap: 30px">
+          <div id="add-quiz-submit">
+            <h3>SUBMIT</h3>
+          </div>
+        </div>
+        <div class="test-score">
+          <div class="score">
+            <h2><span>Correct - </span> 34</h2>
+            <h2><span>Wrong - </span>2</h2>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- footer -->
     <footer class="footer">
-        <div class="container">
-            <p>Copyright &copy; 2021</p>
-            <div class="social">
-                <a href="#"><i class="fab fa-github fa-2x"></i></a>
-                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            </div>
+      <div class="container">
+        <p>Copyright &copy; 2021</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-github fa-2x"></i></a>
+          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
         </div>
+      </div>
     </footer>
 
     <script src="../../../public/assests/js/auth/auth.js"></script>
     <script src="../../../public/assests/js/index.js"></script>
     <script src="../../../public/assests/js/addquiz.js"></script>
-</body>
+  </body>
 </html>

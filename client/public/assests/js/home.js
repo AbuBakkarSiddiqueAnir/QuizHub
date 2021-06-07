@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function tableHtmlParser(data) {
-  
   let users = data.users;
   let tableData = `<table>
                       <tr>

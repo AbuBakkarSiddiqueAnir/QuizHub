@@ -86,4 +86,4 @@ function addquizunsuccess(err) {
   }, 1500);
 }
 
-//select option section
+
