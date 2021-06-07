@@ -283,6 +283,481 @@
         ],
         "answer":"identify the file type",
         "tag" : "cs"
+    },
+    {
+        "question": "Passwords enable users to_____",
+        "options":[
+            {
+                "option": "get into the system quickly"
+            },
+            {
+                "option": "make efficient use of time"
+            },
+            {               
+                "option": "retain confidentiality of files"
+            },                  
+            {
+                "option": "simplify file stuctures"
+            }
+        ],
+        "answer":"retain confidentiality of files",
+        "tag" : "cs"
+    },
+    {
+        "question": "In page preview mode_____",
+        "options":[
+            {
+                "option": "You can see all pages of your document"
+            },
+            {
+                "option": "You can only see the page you are currently working on"
+            },
+            {               
+                "option": "You can only see pages that don't contain graphics"
+            },                  
+            {
+                "option": "You can only see the title page of your document"
+            }
+        ],
+        "answer":"You can only see the page you are currently working on",
+        "tag" : "cs"
+    },
+    {
+        "question": "To navigate to a new Web page for which you know the URL, type that URL in the browser's _______ and press Enter.",
+        "options":[
+            {
+                "option": "Address bar"
+            },
+            {
+                "option": "Domain bar"
+            },
+            {               
+                "option": "Address button"
+            },                  
+            {
+                "option": "Name button"
+            }
+        ],
+        "answer":"Address bar",
+        "tag" : "cs"
+    },
+    {
+        "question": "The CPU, also called the _____ when talking about PCs, does the vast majority of the processesing for a computer",
+        "options":[
+            {
+                "option": "macro-processor"
+            },
+            {
+                "option": "RAM"
+            },
+            {               
+                "option": "Memory System"
+            },                  
+            {
+                "option": "micro-processor"
+            }
+        ],
+        "answer":"micro-processor",
+        "tag" : "cs"
+    },
+    {
+        "question": "A computer's type, processor, and operating system defines its_____.",
+        "options":[
+            {
+                "option": "brand"
+            },
+            {
+                "option": "size"
+            },
+            {               
+                "option": "speed"
+            },                  
+            {
+                "option": "platform"
+            }
+        ],
+        "answer":"speed",
+        "tag" : "cs"
+    },
+    {
+        "question": "The part of the CPU that accesses and decodes program instructions, and coordinates the flow of data among various system components is the ________",
+        "options":[
+            {
+                "option": "ALU"
+            },
+            {
+                "option": "control unit"
+            },
+            {               
+                "option": "megahurtz"
+            },                  
+            {
+                "option": "motherboard"
+            }
+        ],
+        "answer":"control unit",
+        "tag" : "cs"
+    },
+    {
+        "question": "Computer programs are writter in a high-level programming language; however, the human readable version of program is called____",
+        "options":[
+            {
+                "option": "cache"
+            },
+            {
+                "option": "instruction set"
+            },
+            {               
+                "option": "source code"
+            },                  
+            {
+                "option": "word size"
+            }
+        ],
+        "answer":"source code",
+        "tag" : "cs"
+    },
+    {
+        "question": "What is the difference between a CD-ROM and a CD-RW ?",
+        "options":[
+            {
+                "option": "They are the same, just two different terms used by different manufacturers"
+            },
+            {
+                "option": "A CD-ROM can be written to and CD-RW can't"
+            },
+            {               
+                "option": "A CD-RW can be written too, but a CD-ROM can only be read from"
+            },                  
+            {
+                "option": "A CD-ROM holds more information than a CD-RW"
+            }
+        ],
+        "answer":"A CD-RW can be written too, but a CD-ROM can only be read from",
+        "tag" : "cs"
+    },
+    {
+        "question": "What is the term for how words will appear on a page ?",
+        "options":[
+            {
+                "option": "text-formatting"
+            },
+            {
+                "option": "Character formatting"
+            },
+            {               
+                "option": "Point size"
+            },                  
+            {
+                "option": "typeface"
+            }
+        ],
+        "answer":"text-formatting",
+        "tag" : "cs"
+    },
+    {
+        "question": "The simultaneous execution of two or more instructions is called _______",
+        "options":[
+            {
+                "option": "sequential access"
+            },
+            {
+                "option": "reduced instruction set computing"
+            },
+            {               
+                "option": "multiprocessing"
+            },                  
+            {
+                "option": "disk mirroring"
+            }
+        ],
+        "answer":"multiprocessing",
+        "tag" : "cs"
+    },
+    {
+        "question": "Multiprogramming systems______.",
+        "options":[
+            {
+                "option": "are easier to develop than single programming systems"
+            },
+            {
+                "option": "execute each job faster"
+            },
+            {               
+                "option": "execute more jobs in the same time period"
+            },                  
+            {
+                "option": "use only one large mainframe"
+            }
+        ],
+        "answer":"execute more jobs in the same time period",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which device can understand difference between data and programs",
+        "options":[
+            {
+                "option": "input device"
+            },
+            {
+                "option": "memory"
+            },
+            {               
+                "option": "output device"
+            },                  
+            {
+                "option": "microprocessor"
+            }
+        ],
+        "answer":"microprocessor",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which of the following devices have limitation that we can only read it but cannot erase or modify it?",
+        "options":[
+            {
+                "option": "tape drive"
+            },
+            {
+                "option": "hard disk"
+            },
+            {               
+                "option": "compact disk"
+            },                  
+            {
+                "option": "floppy disk"
+            }
+        ],
+        "answer":"floppy disk",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which of the following is not output device",
+        "options":[
+            {
+                "option": "plotter"
+            },
+            {
+                "option": "printer"
+            },
+            {               
+                "option": "monitor"
+            },                  
+            {
+                "option": "touch screen"
+            }
+        ],
+        "answer":"touch screen",
+        "tag" : "cs"
+    },
+    {
+        "question": "A program written in a high level language is referred to as_______.",
+        "options":[
+            {
+                "option": "source code"
+            },
+            {
+                "option": "object code"
+            },
+            {               
+                "option": "machine code"
+            },                  
+            {
+                "option": "assembly code"
+            }
+        ],
+        "answer":"object code",
+        "tag" : "cs"
+    },
+    {
+        "question": "In order to save an existing document with a different name you need to ___",
+        "options":[
+            {
+                "option": "retype the document and give it a different name"
+            },
+            {
+                "option": "use the save as command"
+            },
+            {               
+                "option": "copy and paste the original document to new document and then save"
+            },                  
+            {
+                "option": "use windows explorer to copy the document to a different location and then rename it"
+            }
+        ],
+        "answer":"use the save as command",
+        "tag" : "cs"
+    },
+    {
+        "question": "The piece of hardware that converts your computer's digital signal to an analog signal that can travel over telephone lines is called a ______",
+        "options":[
+            {
+                "option": "red wire"
+            },
+            {
+                "option": "blue wire"
+            },
+            {               
+                "option": "tower"
+            },                  
+            {
+                "option": "modem"
+            }
+        ],
+        "answer":"modem",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which of the following contains information about a single 'entity in the database - like a perosn, place, event, or thing'?",
+        "options":[
+            {
+                "option": "query"
+            },
+            {
+                "option": "form"
+            },
+            {               
+                "option": "record"
+            },                  
+            {
+                "option": "table"
+            }
+        ],
+        "answer":"record",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which of the following is the communications protocol that sets the standard used by every computer that accesses web-based information ?",
+        "options":[
+            {
+                "option": "XML"
+            },
+            {
+                "option": "DML"
+            },
+            {               
+                "option": "HTTP"
+            },                  
+            {
+                "option": "HTML"
+            }
+        ],
+        "answer":"HTTP",
+        "tag" : "cs"
+    },
+    {
+        "question": "A ______ is a computer attached to the internet that runs a special web server software and can send web pages out to other computers over the internet",
+        "options":[
+            {
+                "option": "web client"
+            },
+            {
+                "option": "web system"
+            },
+            {               
+                "option": "web page"
+            },                  
+            {
+                "option": "web server"
+            }
+        ],
+        "answer":"web server",
+        "tag" : "cs"
+    },
+    {
+        "question": "Which one of the following is a key function of a firewall?",
+        "options":[
+            {
+                "option": "Monitoring"
+            },
+            {
+                "option": "Deleting"
+            },
+            {               
+                "option": "Copying"
+            },                  
+            {
+                "option": "Moving"
+            }
+        ],
+        "answer":"Monitoring",
+        "tag" : "cs"
+    },
+    {
+        "question": "The stantard protocol of the internet is ________",
+        "options":[
+            {
+                "option": "TCP/IP"
+            },
+            {
+                "option": "Java"
+            },
+            {               
+                "option": "HTML"
+            },                  
+            {
+                "option": "Flask"
+            }
+        ],
+        "answer":"TCP/IP",
+        "tag" : "cs"
+    },
+    {
+        "question": "A program that generally has more user friendly interface than a DBMS is called a _____.",
+        "options":[
+            {
+                "option": "front end"
+            },
+            {
+                "option": "repository"
+            },
+            {               
+                "option": "back end"
+            },                  
+            {
+                "option": "form"
+            }
+        ],
+        "answer":"front end",
+        "tag" : "cs"
+    },
+    {
+        "question": "Coputers connected to LAN can ______",
+        "options":[
+            {
+                "option": "run faster"
+            },
+            {
+                "option": "Share-information and/or share peripheral equipment"
+            },
+            {               
+                "option": "email"
+            },                  
+            {
+                "option": "go online"
+            }
+        ],
+        "answer":"Share-information and/or share peripheral equipment",
+        "tag" : "cs"
+    },
+    {
+        "question": "Most web sites have a main page, the _____, which acts as a doorway to the rest of the web site page",
+        "options":[
+            {
+                "option": "search engine"
+            },
+            {
+                "option": "home page"
+            },
+            {               
+                "option": "browser"
+            },                  
+            {
+                "option": "URL"
+            }
+        ],
+        "answer":"home page",
+        "tag" : "cs"
     }
 ]
 

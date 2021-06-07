@@ -454,5 +454,385 @@
         ],
         "answer":"Vacuum",
         "tag" : "physics"
+    },
+    {
+        "question": "Electrostatic precipitator is used to control the pollution of",
+        "options":[
+            {
+                "option": "air"
+            },
+            {
+                "option": "water"
+            },
+            {
+                "option": "noise"
+            },
+            {
+                "option": "thermal"
+            }
+        ],
+        "answer":"air",
+        "tag" : "physics"
+    },
+    {
+        "question": "When two ice cubes are pressed over each other they unite to form one cube, because of",
+        "options":[
+            {
+                "option": "vander Waal's forces"
+            },
+            {
+                "option": "dipole moment"
+            },
+            {
+                "option": "hydrogen bond formation"
+            },
+            {
+                "option": "covalent attraction"
+            }
+        ],
+        "answer":"hydrogen bond formation",
+        "tag" : "physics"
+    },
+    {
+        "question": "Which of the following parts of the sunlight makes the solar cooker hot?",
+        "options":[
+            {
+                "option": "Ultraviolet"
+            },
+            {
+                "option": "Redlight"
+            },
+            {
+                "option": "Infrared"
+            },
+            {
+                "option": "Cosmic"
+            }
+        ],
+        "answer":"Infrared",
+        "tag" : "physics"
+    },
+    {
+        "question": "If the velocity-time graph of a particle is represented by y=mt+v, then the particle is moving with____",
+        "options":[
+            {
+                "option": "constant speed"
+            },
+            {
+                "option": "constant velocity"
+            },
+            {
+                "option": "constant acceleration"
+            },
+            {
+                "option": "varying acceleratin"
+            }
+        ],
+        "answer":"constant acceleration",
+        "tag" : "physics"
+    },
+    {
+        "question": "Which of the following occured first?",
+        "options":[
+            {
+                "option": "Albert Einstein propounded the General Theory of Relativity"
+            },
+            {
+                "option": "Max planck unveiled the Quantum Theory"
+            },
+            {
+                "option": "Guglielmo Marconi sent out the first wireless signals"
+            },
+            {
+                "option": "Wright brothers sucessfully flew an aircraft"
+            }
+        ],
+        "answer":"Guglielmo Marconi sent out the first wireless signal",
+        "tag" : "physics"
+    },
+    {
+        "question": "The animal uses sounds as its 'eyes' is ____",
+        "options":[
+            {
+                "option": "Dog"
+            },
+            {
+                "option": "Cat"
+            },
+            {
+                "option": "Snake"
+            },
+            {
+                "option": "Bat"
+            }
+        ],
+        "answer":"Bat",
+        "tag" : "physics"
+    },
+    {
+        "question": "The sky appears blue because of ______",
+        "options":[
+            {
+                "option": "Atmospheric water vapour"
+            },
+            {
+                "option": "Scattering of light"
+            },
+            {
+                "option": "Reflection on sea water"
+            },
+            {
+                "option": "Emission of blue wavelength by the sun"
+            }
+        ],
+        "answer":"Scattering of light",
+        "tag" : "physics"
+    },
+    {
+        "question": "Dynamo is a device for coverting___",
+        "options":[
+            {
+                "option": "Heat energy into electrical energy"
+            },
+            {
+                "option": "Mechanical energy into electrical energy"
+            },
+            {
+                "option": "Magnetic energy into electrical energy"
+            },
+            {
+                "option": "Chemical energy into electrical energy"
+            }
+        ],
+        "answer":"Mechanical energy into electrical energy",
+        "tag" : "physics"
+    },
+    {
+        "question": "The working of quartz crystal in the watch is based on ___",
+        "options":[
+            {
+                "option": "Johnson effect"
+            },
+            {
+                "option": "Photoelectric effect"
+            },
+            {
+                "option": "Edison effect"
+            },
+            {
+                "option": "Piezo electric effect"
+            }
+        ],
+        "answer":"Piezo electric effect",
+        "tag" : "physics"
+    },
+    {
+        "question": "Oil rises up the wick in a lamp because, ",
+        "options":[
+            {
+                "option": "oil is very light"
+            },
+            {
+                "option": "of the diffusion of oil through the wick"
+            },
+            {
+                "option": "of the surface tension phenomenon"
+            },
+            {
+                "option": "Of the capillary action phenomenon"
+            }
+        ],
+        "answer":"Of the capillary action phenomenon",
+        "tag" : "physics"
+    },
+    {
+        "question": "In the atmosphere ultraviolet rays are absorbed by __",
+        "options":[
+            {
+                "option": "Oxygen"
+            },
+            {
+                "option": "Nitrogen"
+            },
+            {
+                "option": "Ozone"
+            },
+            {
+                "option": "Helium"
+            }
+        ],
+        "answer":"Ozone",
+        "tag" : "physics"
+    },
+    {
+        "question": "In which of the following cryogenic engines are used?",
+        "options":[
+            {
+                "option": "Frost-free refrigerators"
+            },
+            {
+                "option": "Sub-marine propulsion"
+            },
+            {
+                "option": "Rockets"
+            },
+            {
+                "option": "Researchers in super conductivity"
+            }
+        ],
+        "answer":"Rockets",
+        "tag" : "physics"
+    },
+    {
+        "question": "What was the name of the space shuttle that landed man on the moon?",
+        "options":[
+            {
+                "option": "Eagle"
+            },
+            {
+                "option": "Columbia"
+            },
+            {
+                "option": "Challenger"
+            },
+            {
+                "option": "Apollo"
+            }
+        ],
+        "answer":"Apollo",
+        "tag" : "physics"
+    },
+    {
+        "question": "The energy emitted by the sun is due to ___",
+        "options":[
+            {
+                "option": "Chemical reaction"
+            },
+            {
+                "option": "Nuclear fission"
+            },
+            {
+                "option": "Nuclear fusion"
+            },
+            {
+                "option": "ALl of the above"
+            }
+        ],
+        "answer":"Nuclear fusion",
+        "tag" : "physics"
+    },
+    {
+        "question": "Tungsten is used for the manufacture of the filament of an electric bulb , because___",
+        "options":[
+            {
+                "option": "Its a good conductor"
+            },
+            {
+                "option": "Its economical"
+            },
+            {
+                "option": "Its malleable"
+            },
+            {
+                "option": "It has a very high melting point"
+            }
+        ],
+        "answer":"It has a very high melting point",
+        "tag" : "physics"
+    },
+    {
+        "question": "Who measured the velocity of light first?",
+        "options":[
+            {
+                "option": "Galileo"
+            },
+            {
+                "option": "Newton"
+            },
+            {
+                "option": "Romer"
+            },
+            {
+                "option": "Einstein"
+            }
+        ],
+        "answer":"Romer",
+        "tag" : "physics"
+    },
+    {
+        "question": "Which of the following alloy is used in making magnet?",
+        "options":[
+            {
+                "option": "Duralumin"
+            },
+            {
+                "option": "Stainless steel"
+            },
+            {
+                "option": "Elniko"
+            },
+            {
+                "option": "Magnalium"
+            }
+        ],
+        "answer":"Elniko",
+        "tag" : "physics"
+    },
+    {
+        "question": "Where are mesons found?",
+        "options":[
+            {
+                "option": "Cosmic rays"
+            },
+            {
+                "option": "X-rays"
+            },
+            {
+                "option": "Gamma rays"
+            },
+            {
+                "option": "Laser beam"
+            }
+        ],
+        "answer":"Cosmic rays",
+        "tag" : "physics"
+    },
+    {
+        "question": "Lamberts law is related to _______",
+        "options":[
+            {
+                "option": "Reflection"
+            },
+            {
+                "option": "Refraction"
+            },
+            {
+                "option": "Interference"
+            },
+            {
+                "option": "Illumination"
+            }
+        ],
+        "answer":"Illumination",
+        "tag" : "physics"
+    },
+    {
+        "question": "Which of the following laws validates the statement that matter can neither be created nor destroyed?",
+        "options":[
+            {
+                "option": "Law of conservation of energy"
+            },
+            {
+                "option": "Le chatelier's principle"
+            },
+            {
+                "option": "Law of conservation of Mass"
+            },
+            {
+                "option": "Law of osmosis"
+            }
+        ],
+        "answer":"Law of conservation of Mass",
+        "tag" : "physics"
     }
 ]
