@@ -74,7 +74,7 @@ function addquizsuccess(data) {
   const addQuizBtnH2 = document.querySelector("#add-quiz-h2");
   addQuizBtnH2.innerText = "Successfully added the quiz";
   setTimeout(() => {
-    addQuizBtnH2.innerText = "Add your quiz !!";
+    window.location.replace("profile.html")
   }, 1500);
 }
 

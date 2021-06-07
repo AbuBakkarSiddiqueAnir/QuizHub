@@ -238,3 +238,16 @@ function profileHtmlLoader(element, data, page, quiz_index) {
 
   return (element.innerHTML = tableData);
 }
+
+document.querySelector("#delete-me").addEventListener("click", function(e) {
+  fetch("http://localhost:8080/user/profile/",{
+    method: "DELETE",
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("token")
+    }
+  })
+  .then((data) => data.json())
+  .then((data) => {
+      window.location.replace("signup.html")
+  })
+})

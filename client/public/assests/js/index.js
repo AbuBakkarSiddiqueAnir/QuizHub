@@ -35,9 +35,12 @@ function loadHTMLTable(data, page) {
   for (let quiz of data.mass_quizess) {
     var tableHTML = `<div class="my-quizess-area"> <div > <h2 style="height:auto;word-wrap: break-word;" id="to-update-question"> ${index}. ${quiz.question}</h2></div> <div class="options-area">`;
     let option1 = ``;
+    let optionIndex = 1;
     for (let option of quiz.options) {
-      option1 += `<label class="option" id="${idGenerator}"> ->${option.option}</label><br>`;
+      
+      option1 += `<label class="option" id="${idGenerator}"> ${optionIndex}. ${option.option}</label><br>`;
       idGenerator++;
+      optionIndex++;
     }
     tableHTML += option1;
     tableHTML += `<h3 style="margin-top: 15px; margin-left:35px;" id="to-update-answer"> Answer : ${quiz.answer} </h3>`;
@@ -287,7 +290,7 @@ async function quizTestParser(catagory, skip) {
   function wrongAnsNotifier() {
     const notification = document.querySelector("#notification");
     notification.innerText = "Your answer is incorrect";
-    console.log(document.querySelector("#ans-submit"));
+ 
     document
       .querySelector("#ans-submit")
       .removeEventListener("click", function (e) {
