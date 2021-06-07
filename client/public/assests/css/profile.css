@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #e96f11;
+  --primary-color: #1D1F21;
   --secondary-color: #ffffff;
   --dark-color: #002240;
   --body-color: rgb(238, 233, 233);
@@ -32,7 +32,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: rgb(30, 166, 178);
 }
 
 h1,
@@ -76,7 +76,7 @@ h2 {
   margin-top: 0px;
   margin-left: 0px;
   font-size: 67px;
-  color: white;
+  color: rgb(30, 166, 178);
 }
 
 nav ul li {
@@ -85,7 +85,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
+  color: rgb(30, 166, 178);
 }
 
 nav ul {
@@ -274,7 +274,7 @@ nav ul {
 
 .container p {
   padding: 10px 15px 0;
-  color: white;
+  color: rgb(30, 166, 178);
 }
 
 .container .social {
@@ -285,7 +285,7 @@ nav ul {
 
 .social a {
   padding: 30px 30px 0 0;
-  color: rgb(235, 230, 230);
+  color: rgb(30, 166, 178);
 }
 
 /* 
@@ -316,8 +316,8 @@ table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: #d5620b;
-  color: white;
+  background-color: var(--primary-color);
+  color: rgb(30, 166, 178);
 }
 
 /* quizess page */
