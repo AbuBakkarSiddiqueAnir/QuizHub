@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", auth());
 
 const add_quiz_submit = document.querySelector("#add-quiz-submit");
+
+//add quiz to profile button
 add_quiz_submit.onclick = (event) => {
   const question = document.querySelector("#question");
   const option1 = document.querySelector("#option1");
@@ -70,6 +72,7 @@ add_quiz_submit.onclick = (event) => {
   }
 };
 
+//addquizsuccess() will redirect user to profile page if adding quiz is successful
 function addquizsuccess(data) {
   const addQuizBtnH2 = document.querySelector("#add-quiz-h2");
   addQuizBtnH2.innerText = "Successfully added the quiz";

@@ -55,7 +55,7 @@ exports.queryingQuiz = async (req, res) => {
     res.status(400).send({ err });
   }
 };
-
+//update any quiz
 exports.updateQuiz = async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["question", "options", "answer", "tag"];

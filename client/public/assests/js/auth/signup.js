@@ -1,6 +1,6 @@
 
 const sign_up_submit_button = document.querySelector("#signup_btn")
-
+//sign up button
 sign_up_submit_button.onclick = () =>{
     const sign_up_user_name = document.querySelector("#user_name");
     const sign_up_password = document.querySelector("#password");
@@ -35,7 +35,7 @@ sign_up_submit_button.onclick = () =>{
     }
 
 }
-// 
+
 
 function loadHomePage(data){
     console.log(data)

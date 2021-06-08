@@ -1,5 +1,5 @@
 const logOutBtn = document.querySelector("#logout");
-
+//logout button and it is accessable by any page page
 logOutBtn.addEventListener("click", function () {
   fetch("http://localhost:8080/user/logout", {
     method: "POST",
@@ -24,6 +24,7 @@ const unsuccessfulLogOutFromQuizHub = (error) => {
   window.location.replace("home.html");
 };
 
+//loadHTMLTable() parse the quiz  api data and render as html in the webpage
 function loadHTMLTable(data, page) {
   const table = document.querySelector("#my-quizess-container");
 
@@ -56,13 +57,13 @@ function loadHTMLTable(data, page) {
     index++;
   }
   table.innerHTML += tableData;
-
+//checks if any quizess there or not
   if (data.mass_quizess.length === 0)
     table.innerHTML = `<div style="display:flex;justify-content:center;align-items:center;height:300px;">
     <h2>No quiz to show</h2>
   </div>`;
 }
-
+//those button checks which catagory quiz want to display and colored it
 const activeTagBtn = (btn) => {
   const physicsBtn = document.querySelector("#physics");
   const csBtn = document.querySelector("#cs");
@@ -91,7 +92,9 @@ const activeTagBtn = (btn) => {
   }
 };
 
+//quizTestParser() displays the quiz in the quiz test section
 async function quizTestParser(catagory, skip) {
+  //those variables are used to extract the user data with every click with out the help of auth variables that were in the auth section, for updating info
   let k, m, l, n, e, f, g, h;
 
   try {
@@ -121,7 +124,7 @@ async function quizTestParser(catagory, skip) {
   } catch (error) {
     console.log(error);
   }
-
+  //this funtion pareses the user data in a single array 
   function notAllowedAnswerObjMaker() {
     let a = [];
     for (let obj of notAllowedAnswer) {
@@ -138,7 +141,7 @@ async function quizTestParser(catagory, skip) {
   var notAllowedAnswerObjMakerData = notAllowedAnswerObjMaker();
 
   let tag = catagory;
-
+  //calls quiz route for quiz
   fetch(`http://localhost:8080/quiz/test/${tag}?skip=${skip}&limit=1`, {
     method: "GET",
     headers: {
@@ -155,7 +158,7 @@ async function quizTestParser(catagory, skip) {
       console.log(error);
       notifier(error, skip);
     });
-
+    //quizTestHtmlLoader() loads the quiz after quiz test
   function quizTestHtmlLoader(data, skip) {
     const quizTestArea = document.querySelector("#quiz-test-container");
     let optionsHtmlArea = ``;
@@ -219,6 +222,7 @@ async function quizTestParser(catagory, skip) {
 
     quizTestArea.innerHTML = testHtml;
     const notification = document.querySelector("#notification");
+    //checks which route to hit according to the quizess catagory and correct or wrong answer
     if (tag === "physics") {
       document.querySelector("#correct-score").innerText = k;
       document.querySelector("#wrong-score").innerText = m;
@@ -257,7 +261,7 @@ async function quizTestParser(catagory, skip) {
   function nextQuizParser(e, skip) {
     quizTestParser(tag, skip);
   }
-
+  //notifies if any quiz left for user
   function notifier(error, skip) {
     const notification = document.querySelector("#notification");
     notification.innerHTML = "Nope Here<span>&#128512</span>";
@@ -265,7 +269,7 @@ async function quizTestParser(catagory, skip) {
       notification.innerHTML = "No quizess at prev<span>&#128512</span>";
     }
   }
-
+  //checks which radio button user has selected for answer
   function answerSubmit(answer) {
     var getSelectedValue = document.querySelector(
       'input[name="options"]:checked'
@@ -297,12 +301,12 @@ async function quizTestParser(catagory, skip) {
         answerSubmit(answer);
       });
   }
-
+  //checks if user has either even selected a answer
   function nullAnsNotifier() {
     const notification = document.querySelector("#notification");
     notification.innerText = "Select option before submitting";
   }
-
+  //this funtion updates the user profile info after sunmitting the answer 
   function updateUserProfileForCorrectOrWrongAnswer(path, myanswerOnQuiz) {
     const quiz_id_element_for_answer_submission = document.querySelector(
       "#quiz_id_for_answer_submission"
@@ -378,7 +382,7 @@ async function quizTestParser(catagory, skip) {
       document.querySelector("#wrong-score").innerText = h;
     }
     document.querySelector("#ans-submit").style.display = "none";
-
+    //hits the save api for right or wrong answer
     fetch(`http://localhost:8080/user/profile/${tag}/${path}`, {
       method: "PATCH",
       headers: {

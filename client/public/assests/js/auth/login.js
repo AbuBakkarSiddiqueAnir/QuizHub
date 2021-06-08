@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", authOnLogin());
 
 const login_submit_btn = document.querySelector("#login_submit_btn");
-
+//login submit button
 login_submit_btn.onclick = (event) => {
   event.preventDefault();
   const login_username = document.querySelector("#login_username");
@@ -36,7 +36,7 @@ login_submit_btn.onclick = (event) => {
     console.log("fill the login form");
   }
 };
-//
+//home page loader
 
 function loadHomePage(data) {
   console.log(data);

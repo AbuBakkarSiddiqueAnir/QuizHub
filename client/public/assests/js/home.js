@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((error) => console.log(error));
 });
-
+//home page user data table loader
 function tableHtmlParser(data) {
   let users = data.users;
   let tableData = `<table>

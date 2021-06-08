@@ -71,7 +71,7 @@ const quizSchemaWithoutOwner = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+//parse default quizess from the files
 quizSchemaWithOwner.statics.insertMassQuizess = () => {
   const quizFilesPathphysics = path.join(
     __dirname,

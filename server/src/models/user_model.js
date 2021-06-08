@@ -105,7 +105,7 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+//build relation with quiz model
 userSchema.virtual("quiz", {
   ref: "ownerQuiz",
   localField: "_id",
@@ -127,7 +127,7 @@ userSchema.methods.toJSON = function () {
   delete userObject.password;
   return userObject;
 };
-
+//this method checks user authentication means works on login
 userSchema.statics.findByCredentials = async function (username, password) {
   const user = await User.findOne({ username });
   if (!user) {
@@ -139,7 +139,7 @@ userSchema.statics.findByCredentials = async function (username, password) {
   }
   return user;
 };
-
+//save user data and checks if password is changed and hash it
 userSchema.pre("save", async function (next) {
   const user = this;
   if (user.isModified("password")) {

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//connect with the database
 try {
   mongoose.connect("mongodb://localhost:27017/Quiz_app", {
     useNewUrlParser: true,

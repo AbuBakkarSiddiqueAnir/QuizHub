@@ -50,11 +50,12 @@ exports.userLogout = async (req, res) => {
     res.send("couldn't log out");
   }
 };
-
+//fetch user info
 exports.usersProfile = async (req, res) => {
   res.status(200).send(req.user);
 };
 
+//user profile update
 exports.updateUserProfile = async (req, res) => {
   const updates = Object.keys(req.body);
 
@@ -74,7 +75,7 @@ exports.updateUserProfile = async (req, res) => {
     res.status(500).send(err);
   }
 };
-
+//deletes user account
 exports.deleteUserAccount = async (req, res) => {
   console.log(req.user._id.toString());
   try {

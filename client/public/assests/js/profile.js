@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", auth());
 
 document.addEventListener("DOMContentLoaded", myQuizessLoaded());
-
+// myQuizessLoaded() loads the user profile quizess
 function myQuizessLoaded() {
   try {
     fetch("http://localhost:8080/quiz/profile/", {
@@ -28,7 +28,7 @@ function userCorrectAnsPercentage() {
     percentageDisplay(noOfCorrectAnswersInGi, noOfWrongAnswersInGi);
   document.querySelector("#other-correct-percentage").innerHTML =
     percentageDisplay(noOfCorrectAnswersInOther, noOfWrongAnswersInOther);
-
+  
   function percentageDisplay(a, b) {
     if (a === 0 && b === 0) {
       return 0 + "%";
@@ -37,7 +37,7 @@ function userCorrectAnsPercentage() {
     }
   }
 }
-
+//deletes and edit the user quiz
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("delete")) {
     try {
@@ -62,6 +62,7 @@ document.addEventListener("click", function (event) {
     }
   } else if (event.target.classList.contains("edit")) {
     try {
+      
       fetch(
         `http://localhost:8080/quiz/profile/${event.target.getAttribute(
           "quiz_id"
@@ -93,7 +94,7 @@ function notifier(data, event) {
   }, 1100);
   console.log(data);
 }
-
+//updateQuiz() updates the quiz data 
 function updateQuiz(event, data) {
   let element = event.target.parentElement.parentElement.parentElement;
   let quiz_index = event.target.getAttribute("quiz_index");
@@ -145,7 +146,7 @@ function updateQuiz(event, data) {
       updatingQuizInput(event, element, quiz_index);
     });
 }
-
+//rerender the updated quiz data
 function updatingQuizInput(event, element, quiz_index) {
   const question = document.querySelector("#question");
   const option1 = document.querySelector("#option1");
@@ -210,7 +211,7 @@ function updatingQuizInput(event, element, quiz_index) {
     alert("Fill out the whole form before submitting");
   }
 }
-
+//loads the profile data and displays it
 function profileHtmlLoader(element, data, page, quiz_index) {
   console.log(data, element);
 
@@ -238,7 +239,7 @@ function profileHtmlLoader(element, data, page, quiz_index) {
 
   return (element.innerHTML = tableData);
 }
-
+//delete the user profile
 document.querySelector("#delete-me").addEventListener("click", function(e) {
   fetch("http://localhost:8080/user/profile/",{
     method: "DELETE",
