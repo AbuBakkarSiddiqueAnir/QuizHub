@@ -38,7 +38,6 @@ function loadHTMLTable(data, page) {
     let option1 = ``;
     let optionIndex = 1;
     for (let option of quiz.options) {
-      
       option1 += `<label class="option" id="${idGenerator}"> ${optionIndex}. ${option.option}</label><br>`;
       idGenerator++;
       optionIndex++;
@@ -57,7 +56,7 @@ function loadHTMLTable(data, page) {
     index++;
   }
   table.innerHTML += tableData;
-//checks if any quizess there or not
+  //checks if any quizess there or not
   if (data.mass_quizess.length === 0)
     table.innerHTML = `<div style="display:flex;justify-content:center;align-items:center;height:300px;">
     <h2>No quiz to show</h2>
@@ -124,7 +123,7 @@ async function quizTestParser(catagory, skip) {
   } catch (error) {
     console.log(error);
   }
-  //this funtion pareses the user data in a single array 
+  //this funtion pareses the user data in a single array
   function notAllowedAnswerObjMaker() {
     let a = [];
     for (let obj of notAllowedAnswer) {
@@ -158,14 +157,15 @@ async function quizTestParser(catagory, skip) {
       console.log(error);
       notifier(error, skip);
     });
-    //quizTestHtmlLoader() loads the quiz after quiz test
+  //quizTestHtmlLoader() loads the quiz after quiz test
   function quizTestHtmlLoader(data, skip) {
     const quizTestArea = document.querySelector("#quiz-test-container");
     let optionsHtmlArea = ``;
 
     for (let option of data.options) {
+      let trimed = option.option.replace(/\s/g, '');
       optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
-                          <label  class="option" for="${option.option}">${option.option}</label><br />`;
+                          <label id="${trimed}lebel"  class="option" for="${option.option}">${option.option}</label><br />`;
       optionsHtmlArea += optionHtml;
     }
 
@@ -178,17 +178,20 @@ async function quizTestParser(catagory, skip) {
         submitBtnChecker = "";
         optionsHtmlArea = ``;
         for (let option of data.options) {
+          
+           let trimed = option.option.replace(/\s/g, '');
+          console.log(trimed);
           if (option.option === a.my_answer) {
             optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
-                                <label style="color:red" class="option" for="${option.option}">${option.option}</label><br />`;
+                                <label style="color:red" id="${trimed}lebel" class="option" for="${option.option}">${option.option}</label><br />`;
             optionsHtmlArea += optionHtml;
           } else if (option.option === data.answer) {
             optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
-                                <label style="color:green" class="option" for="${option.option}">${option.option}</label><br />`;
+                                <label style="color:green" id="${trimed}lebel" class="option" for="${option.option}">${option.option}</label><br />`;
             optionsHtmlArea += optionHtml;
           } else {
             optionHtml = `<input type="radio" id="${option.option}" name="options" value="${option.option}" style="margin-top:7px" />
-                                <label class="option" for="${option.option}">${option.option}</label><br />`;
+                                <label class="option" id="${trimed}lebel" for="${option.option}">${option.option}</label><br />`;
             optionsHtmlArea += optionHtml;
           }
         }
@@ -274,13 +277,16 @@ async function quizTestParser(catagory, skip) {
     var getSelectedValue = document.querySelector(
       'input[name="options"]:checked'
     );
+    let myanswerOnQuiz;
     if (getSelectedValue === null) {
       nullAnsNotifier();
     } else if (getSelectedValue.value === answer) {
+       myanswerOnQuiz = getSelectedValue.value;
       correntAnsNotifier();
-      updateUserProfileForCorrectOrWrongAnswer("correct-ans");
+      updateUserProfileForCorrectOrWrongAnswer("correct-ans",myanswerOnQuiz);
     } else if (getSelectedValue.value !== answer) {
-      myanswerOnQuiz = getSelectedValue.value;
+      
+       myanswerOnQuiz = getSelectedValue.value;
       wrongAnsNotifier();
       updateUserProfileForCorrectOrWrongAnswer("wrong-ans", myanswerOnQuiz);
     }
@@ -294,7 +300,7 @@ async function quizTestParser(catagory, skip) {
   function wrongAnsNotifier() {
     const notification = document.querySelector("#notification");
     notification.innerText = "Your answer is incorrect";
- 
+
     document
       .querySelector("#ans-submit")
       .removeEventListener("click", function (e) {
@@ -306,23 +312,25 @@ async function quizTestParser(catagory, skip) {
     const notification = document.querySelector("#notification");
     notification.innerText = "Select option before submitting";
   }
-  //this funtion updates the user profile info after sunmitting the answer 
+  //this funtion updates the user profile info after sunmitting the answer
   function updateUserProfileForCorrectOrWrongAnswer(path, myanswerOnQuiz) {
+   
     const quiz_id_element_for_answer_submission = document.querySelector(
       "#quiz_id_for_answer_submission"
     );
     const quiz_id =
       quiz_id_element_for_answer_submission.getAttribute("quiz_id");
-
+      
     let a, b;
-
+   
     if (tag === "physics" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
       a = k + 1;
       b = arrayOfCorrectAnswersIds;
-      document.querySelector("#correct-score").innerText = k;
+      document.querySelector("#correct-score").innerText = a;
+     
     } else if (tag === "physics" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -330,14 +338,14 @@ async function quizTestParser(catagory, skip) {
       });
       a = m + 1;
       b = arrayOfWrongAnswersIds;
-      document.querySelector("#wrong-score").innerText = m;
+      document.querySelector("#wrong-score").innerText = a;
     } else if (tag === "cs" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
       a = l + 1;
       b = arrayOfCorrectAnswersIds;
-      document.querySelector("#correct-score").innerText = l;
+      document.querySelector("#correct-score").innerText = a;
     } else if (tag === "cs" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -346,14 +354,14 @@ async function quizTestParser(catagory, skip) {
 
       a = n + 1;
       b = arrayOfWrongAnswersIds;
-      document.querySelector("#wrong-score").innerText = n;
+      document.querySelector("#wrong-score").innerText = a;
     } else if (tag === "gi" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
       });
       a = e + 1;
       b = arrayOfCorrectAnswersIds;
-      document.querySelector("#correct-score").innerText = e;
+      document.querySelector("#correct-score").innerText = a;
     } else if (tag === "gi" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -362,7 +370,7 @@ async function quizTestParser(catagory, skip) {
 
       a = f + 1;
       b = arrayOfWrongAnswersIds;
-      document.querySelector("#wrong-score").innerText = f;
+      document.querySelector("#wrong-score").innerText = a;
     } else if (tag === "other" && path === "correct-ans") {
       arrayOfCorrectAnswersIds.push({
         quizids: quiz_id,
@@ -370,7 +378,7 @@ async function quizTestParser(catagory, skip) {
 
       a = g + 1;
       b = arrayOfCorrectAnswersIds;
-      document.querySelector("#correct-score").innerText = g;
+      document.querySelector("#correct-score").innerText = a;
     } else if (tag === "other" && path === "wrong-ans") {
       arrayOfWrongAnswersIds.push({
         quizids: quiz_id,
@@ -379,9 +387,23 @@ async function quizTestParser(catagory, skip) {
 
       a = h + 1;
       b = arrayOfWrongAnswersIds;
-      document.querySelector("#wrong-score").innerText = h;
+      document.querySelector("#wrong-score").innerText = a;
     }
+    
     document.querySelector("#ans-submit").style.display = "none";
+
+    console.log(answer,myanswerOnQuiz)
+    let trimedAnswerPre = answer;
+    let trimedAnswerPost = trimedAnswerPre.replace(/\s/g, '');
+    let trimedmyanswerOnQuizPre = myanswerOnQuiz;
+    let trimedmyanswerOnQuizPost = trimedmyanswerOnQuizPre.replace(/\s/g, '');
+    console.log(trimedAnswerPost, trimedmyanswerOnQuizPost)
+
+    document.querySelector(`#${trimedmyanswerOnQuizPost}lebel`).style.color = "red"
+    document.querySelector(`#${trimedAnswerPost}lebel`).style.color = "green";
+    
+   
+
     //hits the save api for right or wrong answer
     fetch(`http://localhost:8080/user/profile/${tag}/${path}`, {
       method: "PATCH",

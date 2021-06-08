@@ -23,9 +23,12 @@ sign_up_submit_button.onclick = () =>{
             if(data.status == 201){
                 return data.json()
             }
-            throw new Error("wrong status code")
+           data.json().then((data) =>{
+                console.log(data)
+            })
         })
         .then(data =>{
+            console.log(data)
             localStorage.setItem("token", data.token);
             loadHomePage(data)
         }).catch(err => console.log(err)  );
