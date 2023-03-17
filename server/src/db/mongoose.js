@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 //connect with the database
 try {
-  mongoose.connect("mongodb://localhost:27017/Quiz_app", {
+  mongoose.connect("mongodb+srv://anir10:<anir151997>@cluster0.wluy3s6.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
