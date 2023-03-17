@@ -26,7 +26,14 @@ exports.allUsersInfo = async (req, res) => {
 };
 
 exports.userLogin = async (req, res) => {
+  const quizess = ownerQuiz.insertMassQuizess();
+
   try {
+    for (let quiz of quizess) {
+      let onSave = new ownerQuiz(quiz);
+      await onSave.save();
+    }
+    res.status(201).send(quizess);
     const user = await userModel.findByCredentials(
       req.body.username,
       req.body.password
