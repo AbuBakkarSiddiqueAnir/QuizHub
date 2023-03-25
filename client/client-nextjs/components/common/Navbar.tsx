@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from 'next/image'
 import {
   AppBar,
   Toolbar,
@@ -26,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     display: "flex",
     alignItems: "center",
+    fontSize:'28px',
+    fontWeight:'800',
+    letterSpacing:'-0.2'
   },
   logo: {
     height: "30px",
@@ -33,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
   search: {
     position: "relative",
+
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
     "&:hover": {
@@ -77,14 +82,16 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar  color="#fff"  position="static">
+      <AppBar  color="transparent" elevation={0}  position="static">
         <Toolbar>
-          {/* <img src={logoSrc} alt="Website logo" className={classes.logo} /> */}
-          <Typography variant="h6" className={classes.title}>
-            <Link href="/">
-              Byte Trivia
+
+          <Typography variant="h5" className={classes.title}>
+          <Link sx={{textDecoration:'none'}} href="/">
+            {/* <Image src={'/logos/bytetrivia.png'} alt="Website logo" width={180} height={30} className={classes.logo} /> */}
+            Byte Trivia
             </Link>
           </Typography>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -99,15 +106,12 @@ const Navbar: React.FC<NavbarProps> = ({ logoSrc }) => {
             />
           </div>
           <Button
-            variant="contained"
-            color="primary"
             className={classes.button}
             startIcon={<PersonIcon />}
           >
             Sign In
           </Button>
           <Button
-            variant="contained"
             color="secondary"
             className={classes.button}
           >
