@@ -18,6 +18,20 @@ export const NavLinks: Navlink_Type[] = [
 
     },
     {
+        id:'discussion',
+        href:'/discussion',
+        title:'Discussion',
+        active:false,
+
+    },
+    {
+        id:'quiz',
+        href:'/quiz',
+        title:'Quiz',
+        active:false,
+
+    },
+    {
         id:'quiz-test',
         href:'/quiz-test',
         title:'Quiz Test',
@@ -46,20 +60,7 @@ export const NavLinks: Navlink_Type[] = [
             },
         ]
     },
-    {
-        id:'discussion',
-        href:'/discussion',
-        title:'Discussion',
-        active:false,
 
-    },
-    {
-        id:'quiz',
-        href:'/quiz',
-        title:'Quiz',
-        active:false,
-
-    },
 
 ]
 

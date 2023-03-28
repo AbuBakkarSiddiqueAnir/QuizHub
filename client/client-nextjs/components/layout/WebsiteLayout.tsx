@@ -13,7 +13,8 @@ const Layout = ({ children }:{children:ReactNode}) => {
         <MetaTag />
         <link rel="icon" href="/logo/logo.png" />
       </Head>
-      <Navbar/>
+      {children?.type?.page === 'login' || children?.type?.page === 'register' ? <span></span>:<Navbar/>}
+
       {children}
       <Footer />
     </>
