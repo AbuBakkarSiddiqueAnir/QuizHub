@@ -223,9 +223,14 @@ export default function PrimarySearchAppBar() {
                 </>
               ) : (
                 <>
-
+                  <Link href='/auth/login'>
                   <Button variant="text">Sign In</Button>
+                  </Link>
+                  <Link href='/auth/register'>
                   <Button variant="outlined">Sign Up</Button>
+
+                  </Link>
+
                 </>
 
               )
