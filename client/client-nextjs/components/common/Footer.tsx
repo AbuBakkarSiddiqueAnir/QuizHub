@@ -8,6 +8,6 @@ type FooterProps = {
 
 const Footer:React.FC<FooterProps> = () => {
 
-    return <div></div>
+    return <div>footer</div>
 }
 export default Footer;
