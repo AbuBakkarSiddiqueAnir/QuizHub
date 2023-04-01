@@ -4,9 +4,9 @@ import { Navlink_Type } from "@/components/types";
 
 export const NavLinks: Navlink_Type[] = [
     {
-        id:'quiz-regular',
-        href:'/quiz-regular',
-        title:'Quiz Regular',
+        id:'regular-quiz',
+        href:'/regular-quiz',
+        title:'Regular Quiz',
         active:false,
 
     },
@@ -25,9 +25,9 @@ export const NavLinks: Navlink_Type[] = [
 
     },
     {
-        id:'quiz',
-        href:'/quiz',
-        title:'Quiz',
+        id:'challenges',
+        href:'/challenges',
+        title:'Challenges',
         active:false,
 
     },
